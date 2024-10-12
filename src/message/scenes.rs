@@ -3,52 +3,52 @@ use utoipa::ToSchema;
 
 #[derive(ToSchema)]
 #[derive(Serialize, Deserialize)]
-pub struct Scene {
-    pub nodes: Vec<Node>,
-    pub edges: Vec<Edge>,
+pub struct SceneRsp {
+    pub nodes: Vec<NodeRsp>,
+    pub edges: Vec<EdgeRsp>,
 }
 
 #[derive(ToSchema)]
 #[derive(Serialize, Deserialize)]
-pub struct Edge {
+pub struct EdgeRsp {
     pub full_name: String,
-    pub routes: Vec<Route>,
+    pub routes: Vec<RouteRsp>,
 }
 
 #[derive(ToSchema)]
 #[derive(Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Route {
+pub struct RouteRsp {
     pub out_route: Vec<String>,
     pub in_route: Vec<String>,
     #[serde(rename = "route_ui_props")]
     pub route_ui_props: Option<String>,
-    pub props: Option<Props>,
+    pub props: Option<PropsRsp>,
 }
 
 #[derive(ToSchema)]
 #[derive(Serialize, Deserialize)]
-pub struct Props {
+pub struct PropsRsp {
     pub into: String,
     pub out: String,
 }
 
 #[derive(ToSchema)]
 #[derive(Serialize, Deserialize)]
-pub struct Node {
+pub struct NodeRsp {
     pub full_name: String,
     pub name: String,
     pub name_cn: String,
     #[serde(rename = "type")]
-    pub node_type: NodeType,
+    pub node_type: NodeTypeRsp,
     pub desc: String,
-    pub modules: Option<Vec<Module>>,
-    pub tangents: Option<Vec<Module>>,
+    pub modules: Option<Vec<ModuleRsp>>,
+    pub tangents: Option<Vec<ModuleRsp>>,
 }
 
 #[derive(ToSchema)]
 #[derive(Serialize, Deserialize)]
-pub enum NodeType {
+pub enum NodeTypeRsp {
     #[serde(rename = "INSTANCE")]
     Instance,
     #[serde(rename = "NODE")]
@@ -57,18 +57,18 @@ pub enum NodeType {
 
 #[derive(ToSchema)]
 #[derive(Serialize, Deserialize)]
-pub struct Module {
+pub struct ModuleRsp {
     pub full_name: Option<String>,
     pub name: Option<String>,
     pub name_cn: Option<String>,
     #[serde(rename = "type")]
-    pub module_type: Option<ModuleType>,
+    pub module_type: Option<ModuleTypeRsp>,
     pub desc: Option<String>,
 }
 
 #[derive(ToSchema)]
 #[derive(Serialize, Deserialize)]
-pub enum ModuleType {
+pub enum ModuleTypeRsp {
     #[serde(rename = "MODULE")]
     Module,
 }

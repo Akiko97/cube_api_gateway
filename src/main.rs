@@ -15,15 +15,15 @@ use utoipa_swagger_ui::SwaggerUi;
 #[openapi(
     paths(get_scene),
     components(
-        schemas(message::scenes::Scene),
-        schemas(message::scenes::Edge),
-        schemas(message::scenes::Route),
-        schemas(message::scenes::Props),
-        schemas(message::scenes::Node),
-        schemas(message::scenes::NodeType),
-        schemas(message::scenes::Module),
-        schemas(message::scenes::ModuleType),
-        schemas(message::require::GetScene),
+        schemas(message::scenes::SceneRsp),
+        schemas(message::scenes::EdgeRsp),
+        schemas(message::scenes::RouteRsp),
+        schemas(message::scenes::PropsRsp),
+        schemas(message::scenes::NodeRsp),
+        schemas(message::scenes::NodeTypeRsp),
+        schemas(message::scenes::ModuleRsp),
+        schemas(message::scenes::ModuleTypeRsp),
+        schemas(message::require::GetSceneReq),
     )
 )]
 struct ApiDoc;
@@ -37,14 +37,14 @@ const JSON_ALICEBOB_FORCE_ATTACK: &str = include_str!("json/AliceBob.force_attac
 #[utoipa::path(
     post,
     path = "/api/v1/scene/get",
-    request_body(content = GetScene, description = "获取场景信息的请求"),
+    request_body(content = GetSceneReq, description = "获取场景信息的请求"),
     responses(
-        (status = 200, description = "返回正确的场景信息", body = Scene),
+        (status = 200, description = "返回正确的场景信息", body = SceneRsp),
         (status = 404, description = "请求不存在的场景")
     )
 )]
 async fn get_scene(
-    Json(payload): Json<message::require::GetScene>,
+    Json(payload): Json<message::require::GetSceneReq>,
 ) -> Result<Response, StatusCode> {
     let json = match payload.scene_id {
         0 => JSON_ALICEBOB_INIT,
