@@ -1,0 +1,4 @@
+/target
+.DS_Store
+src/json/*.json
+original_data
