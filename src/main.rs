@@ -20,9 +20,8 @@ use utoipa_swagger_ui::SwaggerUi;
         schemas(message::scenes::RouteRsp),
         schemas(message::scenes::PropsRsp),
         schemas(message::scenes::NodeRsp),
-        schemas(message::scenes::NodeTypeRsp),
         schemas(message::scenes::ModuleRsp),
-        schemas(message::scenes::ModuleTypeRsp),
+        schemas(message::scenes::TypeRsp),
         schemas(message::require::GetSceneReq),
     )
 )]

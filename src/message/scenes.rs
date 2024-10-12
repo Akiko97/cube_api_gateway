@@ -40,19 +40,10 @@ pub struct NodeRsp {
     pub name: String,
     pub name_cn: String,
     #[serde(rename = "type")]
-    pub node_type: NodeTypeRsp,
+    pub node_type: TypeRsp,
     pub desc: String,
     pub modules: Option<Vec<ModuleRsp>>,
     pub tangents: Option<Vec<ModuleRsp>>,
-}
-
-#[derive(ToSchema)]
-#[derive(Serialize, Deserialize)]
-pub enum NodeTypeRsp {
-    #[serde(rename = "INSTANCE")]
-    Instance,
-    #[serde(rename = "NODE")]
-    Node,
 }
 
 #[derive(ToSchema)]
@@ -62,13 +53,17 @@ pub struct ModuleRsp {
     pub name: Option<String>,
     pub name_cn: Option<String>,
     #[serde(rename = "type")]
-    pub module_type: Option<ModuleTypeRsp>,
+    pub module_type: Option<TypeRsp>,
     pub desc: Option<String>,
 }
 
 #[derive(ToSchema)]
 #[derive(Serialize, Deserialize)]
-pub enum ModuleTypeRsp {
+pub enum TypeRsp {
+    #[serde(rename = "INSTANCE")]
+    Instance,
+    #[serde(rename = "NODE")]
+    Node,
     #[serde(rename = "MODULE")]
     Module,
 }
