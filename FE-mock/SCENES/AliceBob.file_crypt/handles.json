@@ -1,0 +1,31 @@
+{
+    "AliceBob.file_crypt.transfer.file_dealer":[
+        "show_file",
+        "link_module",
+        "replace_module",
+        "delete_module"
+    ],
+    "AliceBob.file_crypt.sender.file_dealer":[
+        "show_file",
+        "link_module",
+        "replace_module",
+        "delete_module"
+    ],
+    "AliceBob.file_crypt.receiver.file_dealer":[
+        "show_file",
+        "link_module",
+        "replace_module",
+        "delete_module"
+    ],
+    "AliceBob.file_crypt.transfer.sm4_attack": [
+        "link_module",
+        "replace_module",
+        "set_keys",
+        "delete_module"
+    ],
+    "AliceBob.file_crypt.transfer.base64_crypt":[
+        "link_module",
+        "replace_module",
+        "delete_module"
+    ]
+}

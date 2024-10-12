@@ -1,0 +1,241 @@
+{
+    "AliceBob.force_attack.start": {
+        "extend": "INSTANCE.start"
+    },
+    "AliceBob.force_attack.sender": {
+        "extend": "INSTANCE.sender",
+        "x": 172,
+        "y": 43,
+        "top": 80,
+        "customPorts": [
+            {
+                "position": "rightTop",
+                "shape": "PortLG"
+            },
+            {
+                "position": "rightBottom",
+                "shape": "PortLY"
+            }
+        ]
+    },
+    "AliceBob.force_attack.transfer": {
+        "extend": "INSTANCE.transfer",
+        "x": 552,
+        "y": 43,
+        "heightOffset": 50
+    },
+    "AliceBob.force_attack.receiver": {
+        "extend": "INSTANCE.receiver",
+        "x": 942,
+        "y": 43,
+        "customPorts": [
+            {
+                "position": "leftTop",
+                "shape": "PortRG"
+            },
+            {
+                "position": "rightBottom",
+                "shape": "PortLY"
+            }
+        ]
+    },
+    "AliceBob.force_attack.Alice_crypthub": {
+        "extend": "INSTANCE.Alice_crypthub",
+        "x": 172,
+        "y": 543,
+        "customPorts": [
+            {
+                "position": "rightTop",
+                "shape": "PortLY"
+            }
+        ]
+    },
+    "AliceBob.force_attack.Bob_crypthub": {
+        "extend": "INSTANCE.Bob_crypthub",
+        "x": 942,
+        "y": 543,
+        "customPorts": [
+            {
+                "position": "rightTop",
+                "shape": "PortLY"
+            }
+        ]
+    },
+    "AliceBob.force_attack.sender.request": {
+        "extend": "MODULE.request"
+    },
+    "AliceBob.force_attack.transfer.file_dealer": {
+        "extend": "MODULE.file_dealer",
+        "isCrypy": true,
+        "needSm4": true
+    },
+    "AliceBob.force_attack.sender.msg_print": {
+        "extend": "MODULE.msg_print"
+    },
+    "AliceBob.force_attack.sender.file_dealer": {
+        "extend": "MODULE.file_dealer"
+    },
+    "AliceBob.force_attack.receiver.file_dealer": {
+        "extend": "MODULE.file_dealer"
+    },
+    "AliceBob.force_attack.transfer.sm4_attack": {
+        "extend": "MODULE.sm4_attack"
+    },
+    "AliceBob.force_attack.transfer.point_copy": {
+        "extend": "MODULE.point_copy",
+        "x": 660,
+        "y": 108
+    },
+    "AliceBob.force_attack.sender.point_intercept": {
+        "extend": "MODULE.point_intercept",
+        "x": 405,
+        "y": 265
+    },
+    "AliceBob.force_attack.receiver.point_intercept": {
+        "extend": "MODULE.point_intercept",
+        "x": 990,
+        "y": 108
+    },
+    "AliceBob.force_attack.Bob_crypthub.sm4_crypt": {
+        "extend": "MODULE.sm4_crypt"
+    },
+    "AliceBob.force_attack.Alice_crypthub.sm4_crypt": {
+        "extend": "MODULE.sm4_crypt"
+    },
+    "AliceBob.force_attack.Bob_crypthub.base64_crypt": {
+        "extend": "MODULE.base64_crypt"
+    },
+    "AliceBob.force_attack.Alice_crypthub.base64_crypt": {
+        "extend": "MODULE.base64_crypt"
+    },
+    "AliceBob.force_attack.route<main>": {
+        "stroke": "#02B949"
+    },
+    "AliceBob.force_attack.route<D>": {
+        "stroke": "#E844FF"
+    },
+    "AliceBob.force_attack.route<A>.sender": {
+        "stroke": "#FFB701"
+    },
+    "AliceBob.force_attack.route<A>.receiver": {
+        "stroke": "#FFB701"
+    },
+    "AliceBob.force_attack.start$_$AliceBob.force_attack.sender": {
+        "into": "leftTop_in",
+        "out": "rightTop_out",
+        "outVertices": [
+            {
+                "x": 425,
+                "y": 125
+            }
+        ]
+    },
+    "AliceBob.force_attack.sender$_$AliceBob.force_attack.transfer": {
+        "into": "leftTop_in",
+        "out": "rightTop_out",
+        "AliceBob.force_attack.transfer.point_copy": {
+            "into": "port_l"
+        }
+    },
+    "AliceBob.force_attack.transfer$_$AliceBob.force_attack.receiver": {
+        "into": "leftTop_in",
+        "out": "leftTop_out",
+        "AliceBob.force_attack.receiver.point_intercept": {
+            "into": "port_l"
+        }
+    },
+    "AliceBob.force_attack.transfer$_$AliceBob.force_attack.sender": {
+        "into": "rightTop_in",
+        "intoVertices": [
+            {
+                "x": 445,
+                "y": 150
+            },
+            {
+                "x": 445,
+                "y": 350
+            }
+        ],
+        "AliceBob.force_attack.sender.msg_print": {
+            "into": "port_r"
+        }
+    },
+    "route<A>.sender$_$AliceBob.force_attack.sender$_$AliceBob.force_attack.sender": {
+        "out": "rightBottom_in",
+        "outVertices": [
+            {
+                "x": 440,
+                "y": 403
+            }
+        ]
+    },
+    "route<A>.sender$_$AliceBob.force_attack.sender$_$AliceBob.force_attack.Alice_crypthub": {
+        "into": "rightTop_out2",
+        "out": "rightTop_in2",
+        "outRouteVertices": [
+            {
+                "x": 500,
+                "y": 410
+            },
+            {
+                "x": 500,
+                "y": 450
+            }
+        ]
+    },
+    "route<A>.sender$_$AliceBob.force_attack.Alice_crypthub$_$AliceBob.force_attack.sender":{
+        "into": "rightBottom_out",
+        "outRouteVertices": [
+          {
+            "x": 520,
+            "y": 550
+          },
+          {
+            "x": 520,
+            "y": 383
+          }
+        ],
+        "AliceBob.force_attack.sender.point_intercept":{
+          "into": "port_r"
+        }
+    },
+    "route<A>.receiver$_$_$_$AliceBob.force_attack.receiver":{
+        "out": "rightBottom_in",
+        "outVertices": [
+          {
+            "x": 990,
+            "y": 230
+          }
+        ]
+    },
+    "route<A>.receiver$_$AliceBob.force_attack.receiver$_$AliceBob.force_attack.Bob_crypthub":{
+        "into": "rightTop_out2",
+        "out": "rightTop_in2",
+        "outRouteVertices": [
+          {
+            "x": 1260,
+            "y": 230
+          },
+          {
+            "x": 1260,
+            "y": 400
+          }
+        ]
+    },
+    "route<A>.receiver$_$AliceBob.force_attack.Bob_crypthub$_$AliceBob.force_attack.receiver":{
+        "into": "rightBottom_out",
+        "outRouteVertices": [
+          {
+            "x": 1280,
+            "y": 400
+          },
+          {
+            "x": 1280,
+            "y": 183
+          }
+        ],
+        "AliceBob.force_attack.receiver.point_intercept":{
+          "into": "port_l"
+        }  
+    }
+}

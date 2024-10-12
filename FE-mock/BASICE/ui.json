@@ -1,0 +1,341 @@
+{
+    "MODULE": {
+        "request": {
+            "extend": "BASE_MODULE",
+            "type":"request",
+            "options": {
+                "background": "#2B70FF"
+            },
+            "data": {
+                "title": "请求模块"
+            }
+        },
+        "msg_print": {
+            "extend": "BASE_MODULE",
+            "type":"msg_print",
+            "options": {
+                "background": "#2B70FF"
+            },
+            "data": {
+                "title": "消息文件打印模块"
+            }
+        },
+        "file_dealer": {
+            "extend": "BASE_MODULE",
+            "type":"file_dealer",
+            "isCrypy": false,
+            "options": {
+                "background": "#02B949"
+            },
+            "data": {
+                "title": "文件分发模块"
+            }
+        },
+        "sm4_crypt": {
+            "extend": "BASE_MODULE",
+            "type":"sm4_crypt",
+            "options": {
+                "background": "#FF7F01"
+            },
+            "data": {
+                "title": "SM4加解密模块"
+            },
+            "limits": {
+                "Alice_crypthub": [
+                    {
+                        "x": "70",
+                        "y": "115"
+                      }
+                ],
+                "Bob_crypthub": [
+                    {
+                        "x": "70",
+                        "y": "115"
+                      }
+                ]
+            }
+        },
+        "sm4_attack": {
+            "extend": "BASE_MODULE",
+            "type":"sm4_attack",
+            "needSm4": true,
+            "options": {
+                "background": "#FF7F01",
+                "hasSpin": true
+            },
+            "data": {
+                "title": "SM4穷举攻击模块"
+            },
+            "limits": {
+                "transfer": [
+                    {
+                        "x": "70",
+                        "y": "165"
+                    }
+                ]
+            }
+        },
+        "base64_crypt": {
+            "extend": "BASE_MODULE",
+            "type":"base64_crypt",
+            "options": {
+                "background": "#276cff"
+            },
+            "data": {
+                "title": "Base64编码模块"
+            },
+            "limits": {
+                "transfer": [
+                    {
+                        "x": "70",
+                        "y": "155"
+                    }
+                ],
+                "Alice_crypthub": [
+                    {
+                        "x": "70",
+                        "y": "115"
+                      }
+                ],
+                "Bob_crypthub": [
+                    {
+                        "x": "70",
+                        "y": "115"
+                      }
+                ]
+            }
+        },
+        "point_intercept": {
+            "extend": "BASE_MODULE",
+            "type":"point_intercept",
+            "draggable": false, 
+            "options": {
+                "background": "#FFB701"
+            },
+            "data": {
+                "title": "A"
+            },
+            "limits": {
+                "sender": [
+                  {
+                    "x": "245",
+                    "y": "230"
+                  }
+                ],
+                "receiver": [
+                    {
+                      "x": "48",
+                      "y": "67"
+                    }
+                  ]
+            },
+            "width": 28,
+            "height": 28
+        },
+        "point_copy": {
+            "extend": "BASE_MODULE",
+            "draggable": false, 
+            "type":"point_copy",
+            "options": {
+                "background": "#d651f7"
+            },
+            "data": {
+                "title": "D"
+            },
+            "limits": {
+                "transfer": [
+                  {
+                    "x": "136",
+                    "y": "67"
+                  }
+                ]
+            },
+          "width": 28,
+            "height": 28
+        }
+    },
+    "INSTANCE": {
+        "start": {
+            "x": 70,
+            "y": 183,
+            "shape": "circle",
+            "width": 1,
+            "height": 1
+        },
+        "sender": {
+            "extend": "BASE_INSTANCE",
+            "data": {
+                "icon": "Instance1",
+                "title": "发送者实例",
+                "description": "Alice/sender"
+            },
+            "customPorts": [
+                {
+                    "position": "rightTop",
+                    "shape": "PortLG"
+                }
+            ]
+        },
+        "transfer": {
+            "extend": "BASE_INSTANCE",
+            "customPorts": [
+                {
+                    "position": "leftTop",
+                    "shape": "PortRG"
+                },
+                {
+                    "position": "rightTop",
+                    "shape": "PortLG"
+                }
+            ],
+            "data": {
+                "icon": "Instance2",
+                "title": "传递实例",
+                "description": "transfer"
+            }
+        },
+        "receiver": {
+            "extend": "BASE_INSTANCE",
+            "customPorts": [
+                {
+                    "position": "leftTop",
+                    "shape": "PortRG"
+                }
+            ],
+            "data": {
+                "icon": "Instance3",
+                "title": "接受者实例",
+                "description": "Bob/receiver"
+            }
+        },
+        "Alice_crypthub": {
+            "extend": "BASE_INSTANCE",
+            "customPorts": [],
+            "data": {
+                "icon": "Instance3",
+                "title": "发送者加密实例",
+                "description": "传递"
+            }
+        },
+        "Bob_crypthub": {
+            "extend": "BASE_INSTANCE",
+            "customPorts": [],
+            "data": {
+                "icon": "Instance3",
+                "title": "接收者解密实例",
+                "description": "传递"
+            }
+        }
+    },
+    "EDGE": {
+        "main-routes": {
+            "connector": { "name": "rounded" },
+            "router": {
+                "name": "manhattan",
+                "args": {
+                    "excludeNodes": ["root-start", "AliceBob.base64.transfer.point_copy"]
+                }
+            },
+            "zIndex": 50,
+            "attrs": {
+                "path": {
+                    "stroke": "#02B949",
+                    "strokeWidth": 1,
+                    "targetMarker": "block"
+                }
+            }
+        }
+    },
+    "BASE_INSTANCE": {
+        "shape": "instance",
+        "width": 300,
+        "height": 100
+    },
+    "BASE_MODULE": {
+        "shape": "module",
+        "width": 160,
+        "height": 52,
+        "ports": {
+            "items": [
+                {
+                    "id": "port_t",
+                    "group": "top"
+                },
+                {
+                    "id": "port_b",
+                    "group": "bottom"
+                },
+                {
+                    "id": "port_l",
+                    "group": "left"
+                },
+                {
+                    "id": "port_r",
+                    "group": "right"
+                }
+            ],
+            "groups": {
+                "top": {
+                    "position": "top",
+                    "attrs": {
+                        "circle": {
+                            "r": 1,
+                            "magnet": true,
+                            "stroke": "transparent",
+                            "fill": "transparent"
+                        }
+                    },
+                    "visible": false,
+                    "label": {
+                        "position": "top"
+                    }
+                },
+                "bottom": {
+                    "position": "bottom",
+                    "attrs": {
+                        "circle": {
+                            "r": 1,
+                            "magnet": true,
+                            "stroke": "transparent",
+                            "fill": "transparent"
+                        }
+                    },
+                    "visible": false,
+                    "label": {
+                        "position": "top"
+                    }
+                },
+                "left": {
+                    "position": "left",
+                    "attrs": {
+                        "circle": {
+                            "r": 1,
+                            "magnet": true,
+                            "stroke": "transparent",
+                            "fill": "transparent"
+                        }
+                    },
+                    "visible": false,
+                    "label": {
+                        "position": "top"
+                    }
+                },
+                "right": {
+                    "position": "right",
+                    "attrs": {
+                        "circle": {
+                            "r": 1,
+                            "magnet": true,
+                            "stroke": "transparent",
+                            "fill": "transparent"
+                        }
+                    },
+                    "visible": false,
+                    "label": {
+                        "position": "top"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "AliceBob.teardrop.transfer.file_dealer":[
+        "show_file",
+        "link_module",
+        "replace_module",
+        "delete_module"
+    ],
+    "AliceBob.teardrop.sender.file_dealer": [
+        "show_file",
+        "link_module",
+        "replace_module",
+        "delete_module"
+    ],
+    "AliceBob.teardrop.receiver.file_dealer": [
+        "show_file",
+        "link_module",
+        "replace_module",
+        "delete_module"
+    ]
+}

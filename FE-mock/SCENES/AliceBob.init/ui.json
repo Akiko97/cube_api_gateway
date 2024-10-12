@@ -1,0 +1,61 @@
+{
+    "AliceBob.init.start": {
+        "extend": "INSTANCE.start"
+    },
+    "AliceBob.init.sender": {
+        "extend": "INSTANCE.sender",
+        "x": 172,
+        "y": 43
+    },
+    "AliceBob.init.transfer": {
+        "extend": "INSTANCE.transfer",
+        "x": 552,
+        "y": 43
+    },
+    "AliceBob.init.receiver": {
+        "extend": "INSTANCE.receiver",
+        "x": 942,
+        "y": 43
+    },
+    "AliceBob.init.sender.request": {
+        "extend": "MODULE.request"
+    },
+    "AliceBob.init.sender.msg_print": {
+        
+         "extend": "MODULE.msg_print"
+    },
+    "AliceBob.init.sender.file_dealer": {
+       "extend": "MODULE.file_dealer"
+    },
+    "AliceBob.init.receiver.file_dealer":{
+        "extend": "MODULE.file_dealer"
+    },
+    "AliceBob.init.start$_$AliceBob.init.sender":{
+        "into": "leftTop_in",
+        "out": "rightTop_out",
+        "outVertices": [
+          {
+            "x": 425,
+            "y": 124
+          }
+        ]
+    },
+    "AliceBob.init.sender$_$AliceBob.init.transfer":{
+         "into": "leftTop_in",
+         "out": "rightTop_out"
+    },
+    "AliceBob.init.transfer$_$AliceBob.init.receiver":{
+          "into": "leftTop_in",
+          "out": "leftTop_out"
+    },
+    "AliceBob.init.receiver$_$AliceBob.init.transfer":{
+          "into": "rightTop_in",
+            "out": "leftTop_out"
+    },
+    "AliceBob.init.transfer$_$AliceBob.init.sender":{
+        "into": "rightTop_in",
+        "AliceBob.init.sender.msg_print": {
+          "into": "port_r"
+        }
+    }
+}
