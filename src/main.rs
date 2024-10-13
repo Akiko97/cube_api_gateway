@@ -18,11 +18,11 @@ use utoipa_swagger_ui::SwaggerUi;
         schemas(message::scenes::SceneRsp),
         schemas(message::scenes::EdgeRsp),
         schemas(message::scenes::RouteRsp),
-        schemas(message::scenes::PropsRsp),
         schemas(message::scenes::NodeRsp),
         schemas(message::scenes::ModuleRsp),
         schemas(message::scenes::TypeRsp),
         schemas(message::require::GetSceneReq),
+        schemas(message::require::SceneReqType),
     )
 )]
 struct ApiDoc;
@@ -39,25 +39,31 @@ const JSON_ALICEBOB_FORCE_ATTACK: &str = include_str!("json/AliceBob.force_attac
     request_body(content = GetSceneReq, description = "获取场景信息的请求"),
     responses(
         (status = 200, description = "返回正确的场景信息", body = SceneRsp),
-        (status = 404, description = "请求不存在的场景")
+        (status = 400, description = "请求不存在的场景"),
+        (status = 404, description = "请求不存在"),
+        (status = 422, description = "请求的JSON有误，无法解析"),
     )
 )]
 async fn get_scene(
     Json(payload): Json<message::require::GetSceneReq>,
 ) -> Result<Response, StatusCode> {
-    let json = match payload.scene_id {
-        0 => JSON_ALICEBOB_INIT,
-        1 => JSON_ALICEBOB_TEARDROP,
-        2 => JSON_ALICEBOB_BASE64,
-        3 => JSON_ALICEBOB_FILE_CRYPT,
-        4 => JSON_ALICEBOB_FORCE_ATTACK,
-        _ => return Err(StatusCode::NOT_FOUND),
-    };
-    Ok(Response::builder()
-        .status(StatusCode::OK)
-        .header("Content-Type", "application/json")
-        .body(json.into())
-        .unwrap())
+    match payload.req_type {
+        message::require::SceneReqType::Index => {
+            let json = match payload.scene_id {
+                0 => JSON_ALICEBOB_INIT,
+                1 => JSON_ALICEBOB_TEARDROP,
+                2 => JSON_ALICEBOB_BASE64,
+                3 => JSON_ALICEBOB_FILE_CRYPT,
+                4 => JSON_ALICEBOB_FORCE_ATTACK,
+                _ => return Err(StatusCode::BAD_REQUEST),
+            };
+            Ok(Response::builder()
+                .status(StatusCode::OK)
+                .header("Content-Type", "application/json")
+                .body(json.into())
+                .unwrap())
+        }
+    }
 }
 
 const DEFAULT_PAGE: &str = include_str!("default.html");

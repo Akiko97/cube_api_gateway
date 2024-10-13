@@ -1,69 +1,107 @@
 use serde::{Serialize, Deserialize};
 use utoipa::ToSchema;
 
-#[derive(ToSchema)]
-#[derive(Serialize, Deserialize)]
+/// 场景数据：包括节点数据和边数据
+#[derive(Serialize, Deserialize, ToSchema)]
 pub struct SceneRsp {
+    /// 节点数据: 绘制图形需要所有的节点信息，并提前根据配置注册
     pub nodes: Vec<NodeRsp>,
+    /// 边数据
     pub edges: Vec<EdgeRsp>,
+    /// 提示
+    #[schema(example = "")]
+    pub tips: Option<String>,
 }
 
-#[derive(ToSchema)]
-#[derive(Serialize, Deserialize)]
+/// 边结构
+#[derive(Serialize, Deserialize, ToSchema)]
 pub struct EdgeRsp {
+    /// 全名
+    #[schema(example = "AliceBob.force_attack.route<main>")]
     pub full_name: String,
+    /// 路由配置
     pub routes: Vec<RouteRsp>,
 }
 
-#[derive(ToSchema)]
-#[derive(Serialize, Deserialize)]
+/// 路由结构
+#[derive(Serialize, Deserialize, ToSchema)]
 #[serde(rename_all = "camelCase")]
 pub struct RouteRsp {
+    /// 外部路由（使用全名）
+    #[schema(example = json!([
+        "AliceBob.force_attack.sender.request",
+        "AliceBob.force_attack.sender.file_dealer"
+    ]))]
     pub out_route: Vec<String>,
+    /// 进入实例的内部路由（使用全名）：外部路由最后一个实例内部的路由
+    #[schema(example = json!([
+        "AliceBob.force_attack.start",
+        "AliceBob.force_attack.sender"
+    ]))]
     pub in_route: Vec<String>,
+    /// 该组路由的唯一标识，用于映射 UI 里的样式配置文件
+    #[schema(example = "AliceBob.force_attack.start$_$AliceBob.force_attack.sender")]
     #[serde(rename = "route_ui_props")]
     pub route_ui_props: Option<String>,
-    pub props: Option<PropsRsp>,
 }
 
-#[derive(ToSchema)]
-#[derive(Serialize, Deserialize)]
-pub struct PropsRsp {
-    pub into: String,
-    pub out: String,
-}
-
-#[derive(ToSchema)]
-#[derive(Serialize, Deserialize)]
+/// 节点结构
+#[derive(Serialize, Deserialize, ToSchema)]
 pub struct NodeRsp {
+    /// 全名（全局唯一）
+    #[schema(example = "AliceBob.force_attack.sender")]
     pub full_name: String,
+    /// 名称
+    #[schema(example = "sender")]
     pub name: String,
+    /// 中文名称
+    #[schema(example = "发送者实例")]
     pub name_cn: String,
+    /// 类型
+    #[schema(example = Instance)]
     #[serde(rename = "type")]
     pub node_type: TypeRsp,
+    /// 描述
+    #[schema(example = "")]
     pub desc: String,
+    /// 内部的模块
     pub modules: Option<Vec<ModuleRsp>>,
+    /// 切面点信息，用于链接分支路由
     pub tangents: Option<Vec<ModuleRsp>>,
 }
 
-#[derive(ToSchema)]
-#[derive(Serialize, Deserialize)]
+/// 模块结构
+/// 留空则作为占位符，为后面预留添加模块的位置
+#[derive(Serialize, Deserialize, ToSchema)]
 pub struct ModuleRsp {
+    /// 全名（全局唯一）
+    #[schema(example = "AliceBob.force_attack.transfer.file_dealer")]
     pub full_name: Option<String>,
+    /// 名称
+    #[schema(example = "file_dealer")]
     pub name: Option<String>,
+    /// 中文名称
+    #[schema(example = "文件分发模块")]
     pub name_cn: Option<String>,
+    /// 类型
+    #[schema(example = Module)]
     #[serde(rename = "type")]
     pub module_type: Option<TypeRsp>,
+    /// 描述
+    #[schema(example = "")]
     pub desc: Option<String>,
 }
 
-#[derive(ToSchema)]
-#[derive(Serialize, Deserialize)]
+/// 节点类型
+#[derive(Serialize, Deserialize, ToSchema)]
 pub enum TypeRsp {
+    /// 实例节点
     #[serde(rename = "INSTANCE")]
     Instance,
+    /// 普通节点
     #[serde(rename = "NODE")]
     Node,
+    /// 模块节点
     #[serde(rename = "MODULE")]
     Module,
 }
