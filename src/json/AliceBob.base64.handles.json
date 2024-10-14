@@ -1,0 +1,51 @@
+[
+    {
+        "full_name": "AliceBob.base64.transfer.file_dealer",
+        "handles": [
+            "show_file",
+            "link_module",
+            "replace_module",
+            "delete_module"
+        ]
+    },
+    {
+        "full_name": "AliceBob.base64.sender.file_dealer",
+        "handles": [
+            "show_file",
+            "link_module",
+            "replace_module",
+            "delete_module"
+        ]
+    },
+    {
+        "full_name": "AliceBob.base64.receiver.file_dealer",
+        "handles": [
+            "show_file",
+            "link_module",
+            "replace_module",
+            "delete_module"
+        ]
+    },
+    {
+        "full_name": "AliceBob.base64.Alice_crypthub.base64_crypt",
+        "handles": [
+            "link_module",
+            "replace_module",
+            "delete_module"
+        ]
+    },
+    {
+        "full_name": "AliceBob.base64.Bob_crypthub.base64_crypt",
+        "handles": [
+            "link_module",
+            "replace_module",
+            "delete_module"
+        ]
+    },
+    {
+        "full_name": "AliceBob.base64.transfer.point_copy",
+        "handles": [
+            "link_module"
+        ]
+    }
+]

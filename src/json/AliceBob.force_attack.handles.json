@@ -1,0 +1,56 @@
+[
+    {
+        "full_name": "AliceBob.force_attack.receiver.file_dealer",
+        "handles": [
+            "show_file",
+            "link_module",
+            "replace_module",
+            "delete_module"
+        ]
+    },
+    {
+        "full_name": "AliceBob.force_attack.sender.file_dealer",
+        "handles": [
+            "show_file",
+            "link_module",
+            "replace_module",
+            "delete_module"
+        ]
+    },
+    {
+        "full_name": "AliceBob.force_attack.transfer.file_dealer",
+        "handles": [
+            "show_file",
+            "link_module",
+            "replace_module",
+            "delete_module"
+        ]
+    },
+    {
+        "full_name": "AliceBob.force_attack.Alice_crypthub.sm4_crypt",
+        "handles": [
+            "link_module",
+            "replace_module",
+            "set_keys",
+            "delete_module"
+        ]
+    },
+    {
+        "full_name": "AliceBob.force_attack.Bob_crypthub.sm4_crypt",
+        "handles": [
+            "link_module",
+            "replace_module",
+            "set_keys",
+            "delete_module"
+        ]
+    },
+    {
+        "full_name": "AliceBob.file_crypt.Bob_crypthub.sm4_crypt",
+        "handles": [
+            "link_module",
+            "replace_module",
+            "set_keys",
+            "delete_module"
+        ]
+    }
+]

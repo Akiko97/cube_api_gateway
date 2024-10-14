@@ -1,0 +1,29 @@
+[
+    {
+        "full_name": "AliceBob.teardrop.transfer.file_dealer",
+        "handles": [
+            "show_file",
+            "link_module",
+            "replace_module",
+            "delete_module"
+        ]
+    },
+    {
+        "full_name": "AliceBob.teardrop.sender.file_dealer",
+        "handles": [
+            "show_file",
+            "link_module",
+            "replace_module",
+            "delete_module"
+        ]
+    },
+    {
+        "full_name": "AliceBob.teardrop.receiver.file_dealer",
+        "handles": [
+            "show_file",
+            "link_module",
+            "replace_module",
+            "delete_module"
+        ]
+    }
+]
