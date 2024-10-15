@@ -21,6 +21,11 @@ use crate::ServerContext;
         schemas(crate::message::scene::Type),
         schemas(crate::message::module_handles::ModuleHandles),
         schemas(crate::message::module_handles::Handle),
+        schemas(crate::message::execute_log::ExecuteLog),
+        schemas(crate::message::execute_log::Log),
+        schemas(crate::message::execute_log::LogType),
+        schemas(crate::message::execute_log::LogSubType),
+        schemas(crate::message::execute_log::LogFlow),
     )
 )]
 struct ApiDoc;

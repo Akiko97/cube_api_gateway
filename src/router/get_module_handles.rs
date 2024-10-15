@@ -28,7 +28,7 @@ const JSON_ALICEBOB_FORCE_ATTACK: &str = include_str!("../json/AliceBob.force_at
         ("scene_id" = string, Path, description = "场景ID，可以为 init、teardrop、base64、file_crypt 或 force_attack")
     ),
     responses(
-        (status = 200, description = "返回正确的场景信息", body = ModuleHandles),
+        (status = 200, description = "返回场景中模块可以执行的操作", body = ModuleHandles),
         (status = 404, description = "请求不存在"),
         (status = 504, description = "请求超时"),
     )

@@ -10,6 +10,12 @@ pub fn setup_routes(router: Router<Arc<ServerContext>>) -> Router<Arc<ServerCont
     router.route("/api/v1/scene/:scene_id/execute", post(handle_execute))
 }
 
+const JSON_ALICEBOB_INIT: &str = include_str!("../json/AliceBob.init.execute.json");
+const JSON_ALICEBOB_TEARDROP: &str = include_str!("../json/AliceBob.teardrop.execute.json");
+const JSON_ALICEBOB_BASE64: &str = include_str!("../json/AliceBob.base64.execute.json");
+const JSON_ALICEBOB_FILE_CRYPT: &str = include_str!("../json/AliceBob.file_crypt.execute.json");
+const JSON_ALICEBOB_FORCE_ATTACK: &str = include_str!("../json/AliceBob.force_attack.execute.json");
+
 /// 执行场景
 #[utoipa::path(
     post,
@@ -21,7 +27,7 @@ pub fn setup_routes(router: Router<Arc<ServerContext>>) -> Router<Arc<ServerCont
     ),
     request_body(content = Scene, description = "当前场景的场景数据"),
     responses(
-        (status = 200, description = "返回正确的场景信息", body = Scene),
+        (status = 200, description = "返回执行的 Log", body = ExecuteLog),
         (status = 404, description = "请求不存在"),
         (status = 504, description = "请求超时"),
         (status = 422, description = "无法解析请求的JSON"),
@@ -29,12 +35,20 @@ pub fn setup_routes(router: Router<Arc<ServerContext>>) -> Router<Arc<ServerCont
 )]
 async fn handle_execute(
     State(_state): State<Arc<ServerContext>>,
-    Path(_scene_id): Path<String>,
+    Path(scene_id): Path<String>,
     Json(_payload): Json<crate::message::scene::Scene>,
 ) -> Result<Response, StatusCode> {
+    let rsp = match scene_id.as_str() {
+        "init" => JSON_ALICEBOB_INIT,
+        "teardrop" => JSON_ALICEBOB_TEARDROP,
+        "base64" => JSON_ALICEBOB_BASE64,
+        "file_crypt" => JSON_ALICEBOB_FILE_CRYPT,
+        "force_attack" => JSON_ALICEBOB_FORCE_ATTACK,
+        _ => return Err(StatusCode::NOT_FOUND),
+    };
     Ok(Response::builder()
         .status(StatusCode::OK)
         .header("Content-Type", "application/json")
-        .body("{}".into())
+        .body(rsp.into())
         .unwrap())
 }
