@@ -21,5 +21,6 @@ fn create_router() -> Router<Arc<ServerContext>> {
     router = router::get_index::setup_routes(router);
     router = router::get_module_handles::setup_routes(router);
     router = router::post_execute::setup_routes(router);
+    router = router::get_scene_valid::setup_routes(router);
     router::swagger_ui::setup_routes(router)
 }

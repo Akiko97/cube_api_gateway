@@ -8,6 +8,7 @@ use crate::ServerContext;
 #[openapi(
     paths(
         crate::router::get_index::handle_get_index,
+        crate::router::get_scene_valid::handle_get_valid,
         crate::router::get_module_handles::handle_get_module_handles,
         crate::router::post_execute::handle_execute,
     ),
