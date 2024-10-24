@@ -1,0 +1,278 @@
+{
+  "nodes": [
+    {
+      "full_name": "AliceBob.force_attack.start",
+      "name": "start",
+      "name_cn": "",
+      "type": "NODE",
+      "desc": ""
+    },
+    {
+      "full_name": "AliceBob.force_attack.sender",
+      "name": "sender",
+      "name_cn": "发送者实例",
+      "type": "INSTANCE",
+      "desc": "",
+      "modules": [
+        {
+          "full_name": "AliceBob.force_attack.sender.request",
+          "name": "request",
+          "name_cn": "请求模块",
+          "type": "MODULE",
+          "desc": ""
+        },
+        {
+          "full_name": "AliceBob.force_attack.sender.file_dealer",
+          "name": "file_dealer",
+          "name_cn": "文件分发模块",
+          "type": "MODULE",
+          "desc": ""
+        },
+        {
+          "full_name": "AliceBob.force_attack.sender.msg_print",
+          "name": "msg_print",
+          "name_cn": "消息打印模块",
+          "type": "MODULE",
+          "desc": ""
+        }
+      ],
+      "tangents": [
+        {
+          "full_name": "AliceBob.force_attack.sender.point_intercept",
+          "name": "point_intercept",
+          "name_cn": "拦截点",
+          "type": "MODULE",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "full_name": "AliceBob.force_attack.transfer",
+      "name": "transfer",
+      "name_cn": "传递实例",
+      "type": "INSTANCE",
+      "desc": "",
+      "modules": [
+        {
+          
+        },
+        {
+          "full_name": "AliceBob.force_attack.transfer.file_dealer",
+          "name": "file_dealer",
+          "name_cn": "文件分发模块",
+          "type": "MODULE",
+          "desc": ""
+        }
+      ],
+      "tangents": [
+        {
+          "full_name": "AliceBob.force_attack.transfer.point_copy",
+          "name": "point_copy",
+          "name_cn": "复制点",
+          "type": "MODULE",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "full_name": "AliceBob.force_attack.receiver",
+      "name": "receiver",
+      "name_cn": "接收者实例",
+      "type": "INSTANCE",
+      "desc": "",
+      "modules": [
+        {
+          "full_name": "AliceBob.force_attack.receiver.file_dealer",
+          "name": "file_dealer",
+          "name_cn": "文件分发模块",
+          "type": "MODULE",
+          "desc": ""
+        }
+      ],
+      "tangents": [
+        {
+          "full_name": "AliceBob.force_attack.receiver.point_intercept",
+          "name": "point_intercept",
+          "name_cn": "拦截点",
+          "type": "MODULE",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "full_name": "AliceBob.force_attack.Alice_crypthub",
+      "name": "Alice_crypthub",
+      "name_cn": "发送者加密实例",
+      "type": "INSTANCE",
+      "desc": "",
+      "modules": [
+        {
+          "full_name": "AliceBob.force_attack.Alice_crypthub.sm4_crypt",
+          "name": "sm4_crypt",
+          "name_cn": "",
+          "type": "MODULE",
+          "desc": ""
+        }
+      ]
+    },
+    {
+      "full_name": "AliceBob.force_attack.Bob_crypthub",
+      "name": "Bob_crypthub",
+      "name_cn": "接收者解密实例",
+      "type": "INSTANCE",
+      "desc": "",
+      "modules": [
+        {
+          "full_name": "AliceBob.force_attack.Bob_crypthub.sm4_crypt",
+          "name": "sm4_crypt",
+          "name_cn": "",
+          "type": "MODULE",
+          "desc": ""
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "full_name": "AliceBob.force_attack.route<main>",
+      "routes": [
+        {
+          "outRoute": [
+            "AliceBob.force_attack.start",
+            "AliceBob.force_attack.sender"
+          ],
+          "inRoute": [
+            "AliceBob.force_attack.sender.request",
+            "AliceBob.force_attack.sender.file_dealer",
+            "AliceBob.force_attack.sender.point_intercept"
+          ],
+          "route_ui_props": "AliceBob.force_attack.start$_$AliceBob.force_attack.sender"
+        },
+        {
+          "outRoute": [
+            "AliceBob.force_attack.sender",
+            "AliceBob.force_attack.transfer"
+          ],
+          "inRoute": [
+            "AliceBob.force_attack.transfer.point_copy"
+          ],
+          "route_ui_props": "AliceBob.force_attack.sender$_$AliceBob.force_attack.transfer"
+        },
+        {
+          "outRoute": [
+            "AliceBob.force_attack.transfer",
+            "AliceBob.force_attack.receiver"
+          ],
+          "inRoute": [
+            "AliceBob.force_attack.receiver.point_intercept",
+            "AliceBob.force_attack.receiver.file_dealer"
+          ],
+          "route_ui_props": "AliceBob.force_attack.transfer$_$AliceBob.force_attack.receiver"
+        },
+        {
+          "outRoute": [
+            "AliceBob.force_attack.receiver",
+            "AliceBob.force_attack.transfer"
+          ],
+          "props": {
+            "into": "rightTop_in",
+            "out": "leftTop_out"
+          },
+          "inRoute": []
+        },
+        {
+          "outRoute": [
+            "AliceBob.force_attack.transfer",
+            "AliceBob.force_attack.sender"
+          ],
+          "inRoute": [
+            "AliceBob.force_attack.sender.msg_print"
+          ],
+          "route_ui_props": "AliceBob.force_attack.transfer$_$AliceBob.force_attack.sender"
+        }
+      ]
+    },
+    {
+      "full_name": "AliceBob.force_attack.route<D>",
+      "routes": [
+        {
+          "outRoute": [],
+          "inRoute": [
+            "AliceBob.force_attack.transfer.point_copy",
+            "AliceBob.force_attack.transfer.file_dealer"
+          ]
+        }
+      ]
+    },
+    {
+      "full_name": "AliceBob.force_attack.route<A>.sender",
+      "routes": [
+        {
+          "outRoute": [
+            "",
+            "AliceBob.force_attack.sender"
+          ],
+          "inRoute": [
+            "AliceBob.force_attack.sender.point_intercept"
+          ],
+          "route_ui_props": "route<A>.sender$_$AliceBob.force_attack.sender$_$AliceBob.force_attack.sender"
+        },
+        {
+          "outRoute": [
+            "AliceBob.force_attack.sender",
+            "AliceBob.force_attack.Alice_crypthub"
+          ],
+          "inRoute": [
+            "AliceBob.force_attack.Alice_crypthub.sm4_crypt"
+          ],
+          "route_ui_props": "route<A>.sender$_$AliceBob.force_attack.sender$_$AliceBob.force_attack.Alice_crypthub"
+        },
+        {
+          "outRoute": [
+            "AliceBob.force_attack.Alice_crypthub",
+            "AliceBob.force_attack.sender"
+          ],
+          "inRoute": [
+            "AliceBob.force_attack.sender.point_intercept"
+          ],
+          "route_ui_props": "route<A>.sender$_$AliceBob.force_attack.Alice_crypthub$_$AliceBob.force_attack.sender"
+        }
+      ]
+    },
+    {
+      "full_name": "AliceBob.force_attack.route<A>.receiver",
+      "routes": [
+        {
+          "outRoute": [
+            "",
+            "AliceBob.force_attack.receiver"
+          ],
+          "inRoute": [
+            "AliceBob.force_attack.receiver.point_intercept"
+          ],
+          "route_ui_props": "route<A>.receiver$_$_$_$AliceBob.force_attack.receiver"
+        },
+        {
+          "outRoute": [
+            "AliceBob.force_attack.receiver",
+            "AliceBob.force_attack.Bob_crypthub"
+          ],
+          "inRoute": [
+            "AliceBob.force_attack.Bob_crypthub.sm4_crypt"
+          ],
+          "route_ui_props": "route<A>.receiver$_$AliceBob.force_attack.receiver$_$AliceBob.force_attack.Bob_crypthub"
+        },
+        {
+          "outRoute": [
+            "AliceBob.force_attack.Bob_crypthub",
+            "AliceBob.force_attack.receiver"
+          ],
+          "inRoute": [
+            "AliceBob.force_attack.receiver.point_intercept"
+          ],
+          "route_ui_props": "route<A>.receiver$_$AliceBob.force_attack.Bob_crypthub$_$AliceBob.force_attack.receiver"
+        }
+      ]
+    }
+  ]
+}

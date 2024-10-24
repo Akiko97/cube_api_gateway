@@ -14,11 +14,11 @@ pub fn setup_routes(router: Router<Arc<ServerContext>>) -> Router<Arc<ServerCont
     router.route("/api/v1/scene/:scene_id/valid", get(handle_get_valid))
 }
 
-const JSON_ALICEBOB_INIT: &str = include_str!("../json/AliceBob.init.index.json");
-const JSON_ALICEBOB_TEARDROP: &str = include_str!("../json/AliceBob.teardrop.index.json");
-const JSON_ALICEBOB_BASE64: &str = include_str!("../json/AliceBob.base64.index.json");
-const JSON_ALICEBOB_FILE_CRYPT: &str = include_str!("../json/AliceBob.file_crypt.index.json");
-const JSON_ALICEBOB_FORCE_ATTACK: &str = include_str!("../json/AliceBob.force_attack.index.json");
+const JSON_ALICEBOB_INIT: &str = include_str!("../json/AliceBob.init.valid.json");
+const JSON_ALICEBOB_TEARDROP: &str = include_str!("../json/AliceBob.teardrop.valid.json");
+const JSON_ALICEBOB_BASE64: &str = include_str!("../json/AliceBob.base64.valid.json");
+const JSON_ALICEBOB_FILE_CRYPT: &str = include_str!("../json/AliceBob.file_crypt.valid.json");
+const JSON_ALICEBOB_FORCE_ATTACK: &str = include_str!("../json/AliceBob.force_attack.valid.json");
 
 /// 获取场景的校验信息
 #[utoipa::path(

@@ -21,7 +21,7 @@ pub struct ModuleHandles {
 #[derive(ToSchema, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub enum Handle {
-    /// 显示文件内容
+    /// 显示文件内容（文件名和文件内容）
     ShowFile,
     /// 连接到其他模块
     LinkModule,
@@ -29,6 +29,8 @@ pub enum Handle {
     ReplaceModule,
     /// 删除模块
     DeleteModule,
-    /// 设置密钥
+    /// 设置密钥（密钥字符串）
     SetKeys,
+    /// 攻击信息，获取穷举攻击信息（破译时长等）
+    AttackInfo,
 }
