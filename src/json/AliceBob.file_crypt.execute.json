@@ -1,96 +1,121 @@
-[
-  {
-    "log": [
-      {
-        "route": "AliceBob.init.route<main>",
-        "instance": "sender",
-        "from": "",
-        "to": "request",
-        "type": "FILE_TRANS",
-        "subtype": "REQUEST",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.init.route<main>",
-        "instance": "sender",
-        "from": "request",
-        "to": "file_dealer",
-        "type": "FILE_TRANS",
-        "subtype": "REQUEST",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.init.route<main>",
-        "instance": "sender",
-        "from": "file_dealer",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.init.route<main>",
-        "instance": "transfer",
-        "from": "",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.init.route<main>",
-        "instance": "receiver",
-        "from": "",
-        "to": "file_dealer",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.init.route<main>",
-        "instance": "receiver",
-        "from": "file_dealer",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "NOTICE",
-        "flow": "RESPONSE",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.init.route<main>",
-        "instance": "transfer",
-        "from": "",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "NOTICE",
-        "flow": "RESPONSE",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.init.route<main>",
-        "instance": "sender",
-        "from": "",
-        "to": "msg_print",
-        "type": "FILE_TRANS",
-        "subtype": "NOTICE",
-        "flow": "RESPONSE",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.init.route<main>",
-        "instance": "transfer",
-        "from": "msg_print",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "NOTICE",
-        "flow": "FINISH",
-        "flag": ""
+{
+  "log": [
+    {
+      "log": [
+        {
+          "route": "AliceBob.init.route<main>",
+          "instance": "sender",
+          "from": "",
+          "to": "request",
+          "type": "FILE_TRANS",
+          "subtype": "REQUEST",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.init.route<main>",
+          "instance": "sender",
+          "from": "request",
+          "to": "file_dealer",
+          "type": "FILE_TRANS",
+          "subtype": "REQUEST",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.init.route<main>",
+          "instance": "sender",
+          "from": "file_dealer",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.init.route<main>",
+          "instance": "transfer",
+          "from": "",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.init.route<main>",
+          "instance": "receiver",
+          "from": "",
+          "to": "file_dealer",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.init.route<main>",
+          "instance": "receiver",
+          "from": "file_dealer",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "NOTICE",
+          "flow": "RESPONSE",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.init.route<main>",
+          "instance": "transfer",
+          "from": "",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "NOTICE",
+          "flow": "RESPONSE",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.init.route<main>",
+          "instance": "sender",
+          "from": "",
+          "to": "msg_print",
+          "type": "FILE_TRANS",
+          "subtype": "NOTICE",
+          "flow": "RESPONSE",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.init.route<main>",
+          "instance": "transfer",
+          "from": "msg_print",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "NOTICE",
+          "flow": "FINISH",
+          "flag": ""
+        }
+      ]
+    }
+  ],
+  "module_status": [
+    {
+      "full_name": "AliceBob.file_crypt.transfer.file_dealer",
+      "file": {
+        "name": "IQEAVKvs0VLcTv06JNlxNg==",
+        "text": "8+rwGMm0nPOXEWA50RnwSFjguqDFJV4PZgGaQIwGFfCvHVywswbkXTAIKsg/dfnPBS3jVHP9ErTdXqd0eZiFhPitOcBoaVzQ5ec53ijmfXmjBcilYwhtLkuxe2xJif9M19TUOX2Dphml40PH1dzFlQrjKgvigbAlUl4eLxjB9XxWxXHxSitEtIrCq8ZGZWIP5XYYLqdR4DcuDYF9uYQR3zPY9vYnbtad0mtmjUd1r7k="
       }
-    ]
-  }
-]
+    },
+    {
+      "full_name": "AliceBob.file_crypt.sender.file_dealer",
+      "file": {
+        "name": "测试文件",
+        "text": "基本密码学原理实训，实训内容包括基本应用背景，窃听攻击、编码不是密码，基本SM4加密机制，穷举攻击原理演示五部分"
+      }
+    },
+    {
+      "full_name": "AliceBob.file_crypt.receiver.file_dealer",
+      "file": {
+        "name": "测试文件",
+        "text": "基本密码学原理实训，实训内容包括基本应用背景，窃听攻击、编码不是密码，基本SM4加密机制，穷举攻击原理演示五部分"
+      }
+    }
+  ]
+}

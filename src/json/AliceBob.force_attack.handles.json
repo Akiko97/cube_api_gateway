@@ -45,12 +45,13 @@
         ]
     },
     {
-        "full_name": "AliceBob.file_crypt.Bob_crypthub.sm4_crypt",
+        "full_name": "AliceBob.force_attack.transfer.sm4_attack",
         "handles": [
             "link_module",
             "replace_module",
             "set_keys",
-            "delete_module"
+            "delete_module",
+            "attack_info"
         ]
     }
 ]

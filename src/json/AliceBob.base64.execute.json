@@ -1,220 +1,245 @@
-[
-  {
-    "log": [
-      {
-        "route": "AliceBob.base64.route<main>",
-        "instance": "sender",
-        "from": "",
-        "to": "request",
-        "type": "FILE_TRANS",
-        "subtype": "REQUEST",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.base64.route<main>",
-        "instance": "sender",
-        "from": "request",
-        "to": "file_dealer",
-        "type": "FILE_TRANS",
-        "subtype": "REQUEST",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.base64.route<main>",
-        "instance": "sender",
-        "from": "file_dealer",
-        "to": "point_aspect",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.base64.route<crypto>",
-        "instance": "sender",
-        "from": "point_aspect",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.base64.route<crypto>",
-        "instance": "Alice_crypthub",
-        "from": "",
-        "to": "base64",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.base64.route<crypto>",
-        "instance": "Alice_crypthub",
-        "from": "base64",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": "CRYPT"
-      },
-      {
-        "route": "AliceBob.base64.route<crypto>",
-        "instance": "sender",
-        "from": "",
-        "to": "point_aspect",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": "CRYPT"
-      },
-      {
-        "route": "AliceBob.base64.route<main>",
-        "instance": "sender",
-        "from": "point_aspect",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": "CRYPT"
-      },
-      {
-        "route": "AliceBob.base64.route<main>",
-        "instance": "transfer",
-        "from": "",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": "CRYPT"
-      },
-      {
-        "route": "AliceBob.base64.route<main>",
-        "instance": "receiver",
-        "from": "",
-        "to": "point_aspect",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": "CRYPT"
-      },
-      {
-        "route": "AliceBob.base64.route<crypto>",
-        "instance": "receiver",
-        "from": "point_aspect",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": "CRYPT"
-      },
-      {
-        "route": "AliceBob.base64.route<crypto>",
-        "instance": "Alice_crypthub",
-        "from": "",
-        "to": "base64",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": "CRYPT"
-      },
-      {
-        "route": "AliceBob.base64.route<crypto>",
-        "instance": "Alice_crypthub",
-        "from": "base64",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.base64.route<crypto>",
-        "instance": "receiver",
-        "from": "",
-        "to": "point_aspect",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.base64.route<main>",
-        "instance": "receiver",
-        "from": "point_aspect",
-        "to": "file_dealer",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.base64.route<main>",
-        "instance": "receiver",
-        "from": "file_dealer",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "NOTICE",
-        "flow": "RESPONSE",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.base64.route<main>",
-        "instance": "transfer",
-        "from": "",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "NOTICE",
-        "flow": "RESPONSE",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.base64.route<main>",
-        "instance": "sender",
-        "from": "",
-        "to": "msg_print",
-        "type": "FILE_TRANS",
-        "subtype": "NOTICE",
-        "flow": "RESPONSE",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.base64.route<main>",
-        "instance": "transfer",
-        "from": "msg_print",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "NOTICE",
-        "flow": "FINISH",
-        "flag": ""
+{
+  "log": [
+    {
+      "log": [
+        {
+          "route": "AliceBob.base64.route<main>",
+          "instance": "sender",
+          "from": "",
+          "to": "request",
+          "type": "FILE_TRANS",
+          "subtype": "REQUEST",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.base64.route<main>",
+          "instance": "sender",
+          "from": "request",
+          "to": "file_dealer",
+          "type": "FILE_TRANS",
+          "subtype": "REQUEST",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.base64.route<main>",
+          "instance": "sender",
+          "from": "file_dealer",
+          "to": "point_aspect",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.base64.route<crypto>",
+          "instance": "sender",
+          "from": "point_aspect",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.base64.route<crypto>",
+          "instance": "Alice_crypthub",
+          "from": "",
+          "to": "base64",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.base64.route<crypto>",
+          "instance": "Alice_crypthub",
+          "from": "base64",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": "CRYPT"
+        },
+        {
+          "route": "AliceBob.base64.route<crypto>",
+          "instance": "sender",
+          "from": "",
+          "to": "point_aspect",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": "CRYPT"
+        },
+        {
+          "route": "AliceBob.base64.route<main>",
+          "instance": "sender",
+          "from": "point_aspect",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": "CRYPT"
+        },
+        {
+          "route": "AliceBob.base64.route<main>",
+          "instance": "transfer",
+          "from": "",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": "CRYPT"
+        },
+        {
+          "route": "AliceBob.base64.route<main>",
+          "instance": "receiver",
+          "from": "",
+          "to": "point_aspect",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": "CRYPT"
+        },
+        {
+          "route": "AliceBob.base64.route<crypto>",
+          "instance": "receiver",
+          "from": "point_aspect",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": "CRYPT"
+        },
+        {
+          "route": "AliceBob.base64.route<crypto>",
+          "instance": "Alice_crypthub",
+          "from": "",
+          "to": "base64",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": "CRYPT"
+        },
+        {
+          "route": "AliceBob.base64.route<crypto>",
+          "instance": "Alice_crypthub",
+          "from": "base64",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.base64.route<crypto>",
+          "instance": "receiver",
+          "from": "",
+          "to": "point_aspect",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.base64.route<main>",
+          "instance": "receiver",
+          "from": "point_aspect",
+          "to": "file_dealer",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.base64.route<main>",
+          "instance": "receiver",
+          "from": "file_dealer",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "NOTICE",
+          "flow": "RESPONSE",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.base64.route<main>",
+          "instance": "transfer",
+          "from": "",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "NOTICE",
+          "flow": "RESPONSE",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.base64.route<main>",
+          "instance": "sender",
+          "from": "",
+          "to": "msg_print",
+          "type": "FILE_TRANS",
+          "subtype": "NOTICE",
+          "flow": "RESPONSE",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.base64.route<main>",
+          "instance": "transfer",
+          "from": "msg_print",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "NOTICE",
+          "flow": "FINISH",
+          "flag": ""
+        }
+      ]
+    },
+    {
+      "log": [
+        {
+          "route": "AliceBob.base64.route<teardrop>",
+          "instance": "transfer",
+          "from": "point_copy",
+          "to": "file_dealer",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "DELIVER",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.base64.route<teardrop>",
+          "instance": "transfer",
+          "from": "file_dealer",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "FINISH",
+          "flag": ""
+        }
+      ]
+    }
+  ],
+  "module_status": [
+    {
+      "full_name": "AliceBob.base64.transfer.file_dealer",
+      "file": {
+        "name": "5rWL6K+V5paH5Lu2",
+        "text": "5Z+65pys5a+G56CB5a2m5Y6f55CG5a6e6K6t77yM5a6e6K6t5YaF5a655YyF5ous5Z+65pys5bqU55So6IOM5pmv77yM56qD5ZCs5pS75Ye744CB57yW56CB5LiN5piv5a+G56CB77yM5Z+65pysU0005Yqg5a+G5py65Yi277yM56m35Li+5pS75Ye75Y6f55CG5ryU56S65LqU6YOo5YiG"
       }
-    ]
-  },
-  {
-    "log": [
-      {
-        "route": "AliceBob.base64.route<teardrop>",
-        "instance": "transfer",
-        "from": "point_copy",
-        "to": "file_dealer",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "DELIVER",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.base64.route<teardrop>",
-        "instance": "transfer",
-        "from": "file_dealer",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "FINISH",
-        "flag": ""
+    },
+    {
+      "full_name": "AliceBob.base64.sender.file_dealer",
+      "file": {
+        "name": "测试文件",
+        "text": "基本密码学原理实训，实训内容包括基本应用背景，窃听攻击、编码不是密码，基本SM4加密机制，穷举攻击原理演示五部分"
       }
-    ]
-  }
-]
+    },
+    {
+      "full_name": "AliceBob.base64.receiver.file_dealer",
+      "file": {
+        "name": "测试文件",
+        "text": "基本密码学原理实训，实训内容包括基本应用背景，窃听攻击、编码不是密码，基本SM4加密机制，穷举攻击原理演示五部分"
+      }
+    }
+  ]
+}

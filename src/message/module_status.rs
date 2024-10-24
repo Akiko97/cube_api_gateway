@@ -4,8 +4,11 @@ use utoipa::ToSchema;
 /// 模块状态数据：模块的设定，包括文件内容、设置密钥、攻击信息
 #[derive(ToSchema, Serialize, Deserialize)]
 pub struct ModuleStatus {
+    /// 模块的全名
+    #[schema(example = "AliceBob.base64.transfer.file_dealer")]
+    pub full_name: String,
     /// 加密密钥
-    #[schema(example = "123456")]
+    #[schema(example = "0123456789abcdef0123456789abcdef")]
     pub crypt_key: Option<String>,
     /// 文件内容
     pub file: Option<File>,

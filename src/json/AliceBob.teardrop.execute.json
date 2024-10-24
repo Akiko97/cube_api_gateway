@@ -1,120 +1,145 @@
-[
-  {
-    "log": [
-      {
-        "route": "AliceBob.teardrop.route<main>",
-        "instance": "sender",
-        "from": "",
-        "to": "request",
-        "type": "FILE_TRANS",
-        "subtype": "REQUEST",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.teardrop.route<main>",
-        "instance": "sender",
-        "from": "request",
-        "to": "file_dealer",
-        "type": "FILE_TRANS",
-        "subtype": "REQUEST",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.teardrop.route<main>",
-        "instance": "sender",
-        "from": "file_dealer",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.teardrop.route<main>",
-        "instance": "transfer",
-        "from": "",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.teardrop.route<main>",
-        "instance": "receiver",
-        "from": "",
-        "to": "file_dealer",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "QUERY",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.teardrop.route<main>",
-        "instance": "receiver",
-        "from": "file_dealer",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "NOTICE",
-        "flow": "RESPONSE",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.teardrop.route<main>",
-        "instance": "transfer",
-        "from": "",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "NOTICE",
-        "flow": "RESPONSE",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.teardrop.route<main>",
-        "instance": "sender",
-        "from": "",
-        "to": "msg_print",
-        "type": "FILE_TRANS",
-        "subtype": "NOTICE",
-        "flow": "RESPONSE",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.teardrop.route<main>",
-        "instance": "transfer",
-        "from": "msg_print",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "NOTICE",
-        "flow": "FINISH",
-        "flag": ""
+{
+  "log": [
+    {
+      "log": [
+        {
+          "route": "AliceBob.teardrop.route<main>",
+          "instance": "sender",
+          "from": "",
+          "to": "request",
+          "type": "FILE_TRANS",
+          "subtype": "REQUEST",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.teardrop.route<main>",
+          "instance": "sender",
+          "from": "request",
+          "to": "file_dealer",
+          "type": "FILE_TRANS",
+          "subtype": "REQUEST",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.teardrop.route<main>",
+          "instance": "sender",
+          "from": "file_dealer",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.teardrop.route<main>",
+          "instance": "transfer",
+          "from": "",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.teardrop.route<main>",
+          "instance": "receiver",
+          "from": "",
+          "to": "file_dealer",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "QUERY",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.teardrop.route<main>",
+          "instance": "receiver",
+          "from": "file_dealer",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "NOTICE",
+          "flow": "RESPONSE",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.teardrop.route<main>",
+          "instance": "transfer",
+          "from": "",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "NOTICE",
+          "flow": "RESPONSE",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.teardrop.route<main>",
+          "instance": "sender",
+          "from": "",
+          "to": "msg_print",
+          "type": "FILE_TRANS",
+          "subtype": "NOTICE",
+          "flow": "RESPONSE",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.teardrop.route<main>",
+          "instance": "transfer",
+          "from": "msg_print",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "NOTICE",
+          "flow": "FINISH",
+          "flag": ""
+        }
+      ]
+    },
+    {
+      "log": [
+        {
+          "route": "AliceBob.teardrop.route<teardrop>",
+          "instance": "transfer",
+          "from": "point_copy",
+          "to": "file_dealer",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "DELIVER",
+          "flag": ""
+        },
+        {
+          "route": "AliceBob.teardrop.route<teardrop>",
+          "instance": "transfer",
+          "from": "file_dealer",
+          "to": "",
+          "type": "FILE_TRANS",
+          "subtype": "FILE_DATA",
+          "flow": "FINISH",
+          "flag": ""
+        }
+      ]
+    }
+  ],
+  "module_status": [
+    {
+      "full_name": "AliceBob.teardrop.transfer.file_dealer",
+      "file": {
+        "name": "测试文件",
+        "text": "基本密码学原理实训，实训内容包括基本应用背景，窃听攻击、编码不是密码，基本SM4加密机制，穷举攻击原理演示五部分"
       }
-    ]
-  },
-  {
-    "log": [
-      {
-        "route": "AliceBob.teardrop.route<teardrop>",
-        "instance": "transfer",
-        "from": "point_copy",
-        "to": "file_dealer",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "DELIVER",
-        "flag": ""
-      },
-      {
-        "route": "AliceBob.teardrop.route<teardrop>",
-        "instance": "transfer",
-        "from": "file_dealer",
-        "to": "",
-        "type": "FILE_TRANS",
-        "subtype": "FILE_DATA",
-        "flow": "FINISH",
-        "flag": ""
+    },
+    {
+      "full_name": "AliceBob.teardrop.sender.file_dealer",
+      "file": {
+        "name": "测试文件",
+        "text": "基本密码学原理实训，实训内容包括基本应用背景，窃听攻击、编码不是密码，基本SM4加密机制，穷举攻击原理演示五部分"
       }
-    ]
-  }
-]
+    },
+    {
+      "full_name": "AliceBob.teardrop.receiver.file_dealer",
+      "file": {
+        "name": "测试文件",
+        "text": "基本密码学原理实训，实训内容包括基本应用背景，窃听攻击、编码不是密码，基本SM4加密机制，穷举攻击原理演示五部分"
+      }
+    }
+  ]
+}
