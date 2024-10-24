@@ -26,6 +26,12 @@ use crate::ServerContext;
         schemas(crate::message::execute_log::LogType),
         schemas(crate::message::execute_log::LogSubType),
         schemas(crate::message::execute_log::LogFlow),
+        schemas(crate::message::module_status::ModuleStatus),
+        schemas(crate::message::module_status::File),
+        schemas(crate::message::module_status::AttackInfo),
+        schemas(crate::message::module_status::AttackResult),
+        schemas(crate::message::execute::ExecuteReq),
+        schemas(crate::message::execute::ExecuteRsp),
     )
 )]
 struct ApiDoc;

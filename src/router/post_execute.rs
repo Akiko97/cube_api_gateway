@@ -27,9 +27,9 @@ const JSON_ALICEBOB_FORCE_ATTACK: &str = include_str!("../json/AliceBob.force_at
     params(
         ("scene_id" = string, Path, description = "场景ID，可以为 init、teardrop、base64、file_crypt 或 force_attack")
     ),
-    request_body(content = Scene, description = "当前场景的场景数据"),
+    request_body(content = ExecuteReq, description = "当前场景的场景数据"),
     responses(
-        (status = 200, description = "返回执行的 Log", body = [ExecuteLog]),
+        (status = 200, description = "返回执行的 Log", body = ExecuteRsp),
         (status = 404, description = "请求不存在"),
         (status = 504, description = "请求超时"),
         (status = 422, description = "无法解析请求的JSON"),

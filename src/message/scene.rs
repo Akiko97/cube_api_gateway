@@ -68,10 +68,6 @@ pub struct Node {
     pub modules: Option<Vec<Module>>,
     /// 切面点信息，用于链接分支路由
     pub tangents: Option<Vec<Module>>,
-    /// 加密密钥
-    pub crypt_key: Option<String>,
-    /// 文件内容
-    pub file_text: Option<String>,
 }
 
 /// 模块结构
