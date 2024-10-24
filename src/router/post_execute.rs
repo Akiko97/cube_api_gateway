@@ -4,7 +4,9 @@ use axum::http::StatusCode;
 use axum::response::Response;
 use axum::{Json, Router};
 use axum::routing::post;
+use crate::message::execute_log::ExecuteLog;
 use crate::ServerContext;
+use crate::utils::{read_json, to_json};
 
 pub fn setup_routes(router: Router<Arc<ServerContext>>) -> Router<Arc<ServerContext>> {
     router.route("/api/v1/scene/:scene_id/execute", post(handle_execute))
@@ -27,7 +29,7 @@ const JSON_ALICEBOB_FORCE_ATTACK: &str = include_str!("../json/AliceBob.force_at
     ),
     request_body(content = Scene, description = "当前场景的场景数据"),
     responses(
-        (status = 200, description = "返回执行的 Log", body = ExecuteLog),
+        (status = 200, description = "返回执行的 Log", body = [ExecuteLog]),
         (status = 404, description = "请求不存在"),
         (status = 504, description = "请求超时"),
         (status = 422, description = "无法解析请求的JSON"),
@@ -39,11 +41,16 @@ async fn handle_execute(
     Json(_payload): Json<crate::message::scene::Scene>,
 ) -> Result<Response, StatusCode> {
     let rsp = match scene_id.as_str() {
-        "init" => JSON_ALICEBOB_INIT,
-        "teardrop" => JSON_ALICEBOB_TEARDROP,
-        "base64" => JSON_ALICEBOB_BASE64,
-        "file_crypt" => JSON_ALICEBOB_FILE_CRYPT,
-        "force_attack" => JSON_ALICEBOB_FORCE_ATTACK,
+        "init" =>
+            to_json::<Vec<ExecuteLog>>(&read_json::<Vec<ExecuteLog>>(JSON_ALICEBOB_INIT).unwrap()).unwrap(),
+        "teardrop" =>
+            to_json::<Vec<ExecuteLog>>(&read_json::<Vec<ExecuteLog>>(JSON_ALICEBOB_TEARDROP).unwrap()).unwrap(),
+        "base64" =>
+            to_json::<Vec<ExecuteLog>>(&read_json::<Vec<ExecuteLog>>(JSON_ALICEBOB_BASE64).unwrap()).unwrap(),
+        "file_crypt" =>
+            to_json::<Vec<ExecuteLog>>(&read_json::<Vec<ExecuteLog>>(JSON_ALICEBOB_FILE_CRYPT).unwrap()).unwrap(),
+        "force_attack" =>
+            to_json::<Vec<ExecuteLog>>(&read_json::<Vec<ExecuteLog>>(JSON_ALICEBOB_FORCE_ATTACK).unwrap()).unwrap(),
         _ => return Err(StatusCode::NOT_FOUND),
     };
     Ok(Response::builder()

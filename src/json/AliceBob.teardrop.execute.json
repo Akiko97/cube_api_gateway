@@ -1,123 +1,120 @@
-{
-
-	"log_num":9,		
-	"run_log":
-	[
-		{
-			"route":"AliceBob.teardrop.route<main>",  
-			"instance":"sender",               
-			"from":"",			     
-			"to":"request",			     
-			"type":"FILE_TRANS",		  
-			"subtype":"REQUEST",		      
-			"flow":"QUERY",			
-			"flag":""			     
-		},
-		{
-			"route":"AliceBob.teardrop.route<main>",
-			"instance":"sender",             
-			"from":"request",			    
-			"to":"file_dealer",			  
-			"type":"FILE_TRANS",		  
-			"subtype":"REQUEST",		
-			"flow":"QUERY",			  
-			"flag":""			   
-		},
-		{
-			"route":"AliceBob.teardrop.route<main>",
-			"instance":"sender",                 
-			"from":"file_dealer",		    
-			"to":"",			      
-			"type":"FILE_TRANS",	
-			"subtype":"FILE_DATA",	 
-			"flow":"QUERY",	
-			"flag":""		
-		},
-		{
-			"route":"AliceBob.teardrop.route<main>",  
-			"instance":"transfer",                 
-			"from":"",			  
-			"to":"",			    
-			"type":"FILE_TRANS",		 
-			"subtype":"FILE_DATA",			 
-			"flow":"QUERY",			 
-			"flag":""	
-		},
-		{
-			"route":"AliceBob.teardrop.route<main>",  
-			"instance":"receiver",           
-			"from":"",			  
-			"to":"file_dealer",	
-			"type":"FILE_TRANS",	
-			"subtype":"FILE_DATA",	
-			"flow":"QUERY",				 
-			"flag":""			   	
-		},
-		{
-			"route":"AliceBob.teardrop.route<main>", 
-			"instance":"receiver",              
-			"from":"file_dealer",		     
-			"to":"",			    
-			"type":"FILE_TRANS",		      
-			"subtype":"NOTICE",		      
-			"flow":"RESPONSE",		     
-			"flag":""			     
-		},
-		{
-			"route":"AliceBob.teardrop.route<main>",
-			"instance":"transfer",                
-			"from":"",			     
-			"to":"",			  
-			"type":"FILE_TRANS",		
-			"subtype":"NOTICE",		   
-			"flow":"RESPONSE",			    	 
-			"flag":""			    
-		},
-		{
-			"route":"AliceBob.teardrop.route<main>",  
-			"instance":"sender",                 
-			"from":"",			     
-			"to":"msg_print",			    
-			"type":"FILE_TRANS",		     
-			"subtype":"NOTICE",		   
-			"flow":"RESPONSE",			    
-			"flag":""			     
-		},
-		{
-			"route":"AliceBob.teardrop.route<main>", 
-			"instance":"transfer",                 
-			"from":"msg_print",			   
-			"to":"",			 
-			"type":"FILE_TRANS",		
-			"subtype":"NOTICE",		    
-			"flow":"FINISH",			  
-			"flag":""
-		}
-	]
-}
-{
-	"log_num":2,		
-	"run_log":
-	[
-		{
-			"route":"AliceBob.teardrop.route<teardrop>",  
-			"instance":"transfer",      
-			"from":"point_copy",	
-			"to":"file_dealer",		
-			"type":"FILE_TRANS",	
-			"subtype":"FILE_DATA",	 
-			"flow":"DELIVER",	
-			"flag":""	
-		},
-		{
-			"route":"AliceBob.teardrop.route<teardrop>", 
-			"instance":"transfer",         
-			"from":"file_dealer",		 
-			"to":"",			    
-			"type":"FILE_TRANS",		  
-			"subtype":"FILE_DATA",		 
-			"flow":"FINISH",	
-			"flag":""			   
-		}
-	]
-}
+[
+  {
+    "log": [
+      {
+        "route": "AliceBob.teardrop.route<main>",
+        "instance": "sender",
+        "from": "",
+        "to": "request",
+        "type": "FILE_TRANS",
+        "subtype": "REQUEST",
+        "flow": "QUERY",
+        "flag": ""
+      },
+      {
+        "route": "AliceBob.teardrop.route<main>",
+        "instance": "sender",
+        "from": "request",
+        "to": "file_dealer",
+        "type": "FILE_TRANS",
+        "subtype": "REQUEST",
+        "flow": "QUERY",
+        "flag": ""
+      },
+      {
+        "route": "AliceBob.teardrop.route<main>",
+        "instance": "sender",
+        "from": "file_dealer",
+        "to": "",
+        "type": "FILE_TRANS",
+        "subtype": "FILE_DATA",
+        "flow": "QUERY",
+        "flag": ""
+      },
+      {
+        "route": "AliceBob.teardrop.route<main>",
+        "instance": "transfer",
+        "from": "",
+        "to": "",
+        "type": "FILE_TRANS",
+        "subtype": "FILE_DATA",
+        "flow": "QUERY",
+        "flag": ""
+      },
+      {
+        "route": "AliceBob.teardrop.route<main>",
+        "instance": "receiver",
+        "from": "",
+        "to": "file_dealer",
+        "type": "FILE_TRANS",
+        "subtype": "FILE_DATA",
+        "flow": "QUERY",
+        "flag": ""
+      },
+      {
+        "route": "AliceBob.teardrop.route<main>",
+        "instance": "receiver",
+        "from": "file_dealer",
+        "to": "",
+        "type": "FILE_TRANS",
+        "subtype": "NOTICE",
+        "flow": "RESPONSE",
+        "flag": ""
+      },
+      {
+        "route": "AliceBob.teardrop.route<main>",
+        "instance": "transfer",
+        "from": "",
+        "to": "",
+        "type": "FILE_TRANS",
+        "subtype": "NOTICE",
+        "flow": "RESPONSE",
+        "flag": ""
+      },
+      {
+        "route": "AliceBob.teardrop.route<main>",
+        "instance": "sender",
+        "from": "",
+        "to": "msg_print",
+        "type": "FILE_TRANS",
+        "subtype": "NOTICE",
+        "flow": "RESPONSE",
+        "flag": ""
+      },
+      {
+        "route": "AliceBob.teardrop.route<main>",
+        "instance": "transfer",
+        "from": "msg_print",
+        "to": "",
+        "type": "FILE_TRANS",
+        "subtype": "NOTICE",
+        "flow": "FINISH",
+        "flag": ""
+      }
+    ]
+  },
+  {
+    "log": [
+      {
+        "route": "AliceBob.teardrop.route<teardrop>",
+        "instance": "transfer",
+        "from": "point_copy",
+        "to": "file_dealer",
+        "type": "FILE_TRANS",
+        "subtype": "FILE_DATA",
+        "flow": "DELIVER",
+        "flag": ""
+      },
+      {
+        "route": "AliceBob.teardrop.route<teardrop>",
+        "instance": "transfer",
+        "from": "file_dealer",
+        "to": "",
+        "type": "FILE_TRANS",
+        "subtype": "FILE_DATA",
+        "flow": "FINISH",
+        "flag": ""
+      }
+    ]
+  }
+]

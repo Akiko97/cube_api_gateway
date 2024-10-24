@@ -29,4 +29,6 @@ pub enum Handle {
     ReplaceModule,
     /// 删除模块
     DeleteModule,
+    /// 设置密钥
+    SetKeys,
 }

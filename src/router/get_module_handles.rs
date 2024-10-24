@@ -6,7 +6,9 @@ use axum::{
     http::StatusCode,
     extract::{Path, State}
 };
+use crate::message::module_handles::ModuleHandles;
 use crate::ServerContext;
+use crate::utils::{read_json, to_json};
 
 pub fn setup_routes(router: Router<Arc<ServerContext>>) -> Router<Arc<ServerContext>> {
     router.route("/api/v1/scene/:scene_id/module_handles", get(handle_get_module_handles))
@@ -38,11 +40,16 @@ async fn handle_get_module_handles(
     Path(scene_id): Path<String>,
 ) -> Result<Response, StatusCode> {
     let rsp = match scene_id.as_str() {
-        "init" => JSON_ALICEBOB_INIT,
-        "teardrop" => JSON_ALICEBOB_TEARDROP,
-        "base64" => JSON_ALICEBOB_BASE64,
-        "file_crypt" => JSON_ALICEBOB_FILE_CRYPT,
-        "force_attack" => JSON_ALICEBOB_FORCE_ATTACK,
+        "init" =>
+            to_json::<Vec<ModuleHandles>>(&read_json::<Vec<ModuleHandles>>(JSON_ALICEBOB_INIT).unwrap()).unwrap(),
+        "teardrop" =>
+            to_json::<Vec<ModuleHandles>>(&read_json::<Vec<ModuleHandles>>(JSON_ALICEBOB_TEARDROP).unwrap()).unwrap(),
+        "base64" =>
+            to_json::<Vec<ModuleHandles>>(&read_json::<Vec<ModuleHandles>>(JSON_ALICEBOB_BASE64).unwrap()).unwrap(),
+        "file_crypt" =>
+            to_json::<Vec<ModuleHandles>>(&read_json::<Vec<ModuleHandles>>(JSON_ALICEBOB_FILE_CRYPT).unwrap()).unwrap(),
+        "force_attack" =>
+            to_json::<Vec<ModuleHandles>>(&read_json::<Vec<ModuleHandles>>(JSON_ALICEBOB_FORCE_ATTACK).unwrap()).unwrap(),
         _ => return Err(StatusCode::NOT_FOUND),
     };
     Ok(Response::builder()

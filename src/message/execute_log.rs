@@ -12,16 +12,16 @@ pub struct ExecuteLog {
 #[derive(ToSchema, Serialize, Deserialize)]
 pub struct Log {
     /// 路径名
-    #[serde(rename = "AliceBob.init.route<main>")]
+    #[schema(example = "AliceBob.init.route<main>")]
     pub route: String,
     /// 实例
-    #[serde(rename = "sender")]
+    #[schema(example = "sender")]
     pub instance: String,
     /// 起点
-    #[serde(rename = "request")]
+    #[schema(example = "request")]
     pub from: String,
     /// 终点
-    #[serde(rename = "file_dealer")]
+    #[schema(example = "file_dealer")]
     pub to: String,
     /// Log 的类型
     #[schema(example = FileTrans)]
@@ -41,6 +41,7 @@ pub struct Log {
 /// Log 的类型
 #[derive(ToSchema, Serialize, Deserialize)]
 pub enum LogType {
+    #[serde(rename = "FILE_TRANS")]
     FileTrans,
 }
 
