@@ -1,220 +1,222 @@
 {
   "log": [
     {
-      "log": [
+      "log":
+      [
         {
-          "route": "AliceBob.base64.route<main>",
-          "instance": "sender",
-          "from": "",
-          "to": "request",
-          "type": "FILE_TRANS",
-          "subtype": "REQUEST",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.base64.route<main>",
+          "instance":"sender",
+          "from":"",
+          "to":"request",
+          "type":"FILE_TRANS",
+          "subtype":"REQUEST",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.base64.route<main>",
-          "instance": "sender",
-          "from": "request",
-          "to": "file_dealer",
-          "type": "FILE_TRANS",
-          "subtype": "REQUEST",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.base64.route<main>",
+          "instance":"sender",
+          "from":"request",
+          "to":"file_dealer",
+          "type":"FILE_TRANS",
+          "subtype":"REQUEST",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.base64.route<main>",
-          "instance": "sender",
-          "from": "file_dealer",
-          "to": "point_aspect",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.base64.route<main>",
+          "instance":"sender",
+          "from":"file_dealer",
+          "to":"point_aspect",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.base64.route<crypto>",
-          "instance": "sender",
-          "from": "point_aspect",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.base64.route<crypto>",
+          "instance":"sender",
+          "from":"point_aspect",
+          "to":"",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.base64.route<crypto>",
-          "instance": "Alice_crypthub",
-          "from": "",
-          "to": "base64",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.base64.route<crypto>",
+          "instance":"Alice_crypthub",
+          "from":"",
+          "to":"base64",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.base64.route<crypto>",
-          "instance": "Alice_crypthub",
-          "from": "base64",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": "CRYPT"
+          "route":"AliceBob.base64.route<crypto>",
+          "instance":"Alice_crypthub",
+          "from":"base64",
+          "to":"",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":"CRYPT"
         },
         {
-          "route": "AliceBob.base64.route<crypto>",
-          "instance": "sender",
-          "from": "",
-          "to": "point_aspect",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": "CRYPT"
+          "route":"AliceBob.base64.route<crypto>",
+          "instance":"sender",
+          "from":"",
+          "to":"point_aspect",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":"CRYPT"
         },
         {
-          "route": "AliceBob.base64.route<main>",
-          "instance": "sender",
-          "from": "point_aspect",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": "CRYPT"
+          "route":"AliceBob.base64.route<main>",
+          "instance":"sender",
+          "from":"point_aspect",
+          "to":"",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":"CRYPT"
         },
         {
-          "route": "AliceBob.base64.route<main>",
-          "instance": "transfer",
-          "from": "",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": "CRYPT"
+          "route":"AliceBob.base64.route<main>",
+          "instance":"transfer",
+          "from":"",
+          "to":"",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":"CRYPT"
         },
         {
-          "route": "AliceBob.base64.route<main>",
-          "instance": "receiver",
-          "from": "",
-          "to": "point_aspect",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": "CRYPT"
+          "route":"AliceBob.base64.route<main>",
+          "instance":"receiver",
+          "from":"",
+          "to":"point_aspect",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":"CRYPT"
         },
         {
-          "route": "AliceBob.base64.route<crypto>",
-          "instance": "receiver",
-          "from": "point_aspect",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": "CRYPT"
+          "route":"AliceBob.base64.route<crypto>",
+          "instance":"receiver",
+          "from":"point_aspect",
+          "to":"",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":"CRYPT"
         },
         {
-          "route": "AliceBob.base64.route<crypto>",
-          "instance": "Alice_crypthub",
-          "from": "",
-          "to": "base64",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": "CRYPT"
+          "route":"AliceBob.base64.route<crypto>",
+          "instance":"Alice_crypthub",
+          "from":"",
+          "to":"base64",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":"CRYPT"
         },
         {
-          "route": "AliceBob.base64.route<crypto>",
-          "instance": "Alice_crypthub",
-          "from": "base64",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.base64.route<crypto>",
+          "instance":"Alice_crypthub",
+          "from":"base64",
+          "to":"",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.base64.route<crypto>",
-          "instance": "receiver",
-          "from": "",
-          "to": "point_aspect",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.base64.route<crypto>",
+          "instance":"receiver",
+          "from":"",
+          "to":"point_aspect",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.base64.route<main>",
-          "instance": "receiver",
-          "from": "point_aspect",
-          "to": "file_dealer",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.base64.route<main>",
+          "instance":"receiver",
+          "from":"point_aspect",
+          "to":"file_dealer",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.base64.route<main>",
-          "instance": "receiver",
-          "from": "file_dealer",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "NOTICE",
-          "flow": "RESPONSE",
-          "flag": ""
+          "route":"AliceBob.base64.route<main>",
+          "instance":"receiver",
+          "from":"file_dealer",
+          "to":"",
+          "type":"FILE_TRANS",
+          "subtype":"NOTICE",
+          "flow":"RESPONSE",
+          "flag":""
         },
         {
-          "route": "AliceBob.base64.route<main>",
-          "instance": "transfer",
-          "from": "",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "NOTICE",
-          "flow": "RESPONSE",
-          "flag": ""
+          "route":"AliceBob.base64.route<main>",
+          "instance":"transfer",
+          "from":"",
+          "to":"",
+          "type":"FILE_TRANS",
+          "subtype":"NOTICE",
+          "flow":"RESPONSE",
+          "flag":""
         },
         {
-          "route": "AliceBob.base64.route<main>",
-          "instance": "sender",
-          "from": "",
-          "to": "msg_print",
-          "type": "FILE_TRANS",
-          "subtype": "NOTICE",
-          "flow": "RESPONSE",
-          "flag": ""
+          "route":"AliceBob.base64.route<main>",
+          "instance":"sender",
+          "from":"",
+          "to":"msg_print",
+          "type":"FILE_TRANS",
+          "subtype":"NOTICE",
+          "flow":"RESPONSE",
+          "flag":""
         },
         {
-          "route": "AliceBob.base64.route<main>",
-          "instance": "transfer",
-          "from": "msg_print",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "NOTICE",
-          "flow": "FINISH",
-          "flag": ""
+          "route":"AliceBob.base64.route<main>",
+          "instance":"transfer",
+          "from":"msg_print",
+          "to":"",
+          "type":"FILE_TRANS",
+          "subtype":"NOTICE",
+          "flow":"FINISH",
+          "flag":""
         }
       ]
     },
     {
-      "log": [
+      "log":
+      [
         {
-          "route": "AliceBob.base64.route<teardrop>",
-          "instance": "transfer",
-          "from": "point_copy",
-          "to": "file_dealer",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "DELIVER",
-          "flag": ""
+          "route":"AliceBob.base64.route<teardrop>",
+          "instance":"transfer",
+          "from":"point_copy",
+          "to":"file_dealer",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"DELIVER",
+          "flag":""
         },
         {
-          "route": "AliceBob.base64.route<teardrop>",
-          "instance": "transfer",
-          "from": "file_dealer",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "FINISH",
-          "flag": ""
+          "route":"AliceBob.base64.route<teardrop>",
+          "instance":"transfer",
+          "from":"file_dealer",
+          "to":"",
+          "type":"FILE_TRANS",
+          "subtype":"FILE_DATA",
+          "flow":"FINISH",
+          "flag":""
         }
       ]
     }

@@ -54,7 +54,14 @@
       "desc": "",
       "modules": [
         {
-          
+
+        },
+        {
+          "full_name": "AliceBob.force_attack.transfer.sm4_crypt",
+          "name": "sm4_crypt",
+          "name_cn": "",
+          "type": "MODULE",
+          "desc": ""
         },
         {
           "full_name": "AliceBob.force_attack.transfer.file_dealer",
@@ -199,6 +206,7 @@
           "outRoute": [],
           "inRoute": [
             "AliceBob.force_attack.transfer.point_copy",
+            "AliceBob.force_attack.transfer.sm4_crypt",
             "AliceBob.force_attack.transfer.file_dealer"
           ]
         }

@@ -23,37 +23,12 @@ pub struct Log {
     /// 终点
     #[schema(example = "file_dealer")]
     pub to: String,
-    /// Log 的类型
-    #[schema(example = FileTrans)]
-    #[serde(rename = "type")]
-    pub log_type: LogType,
-    /// Log 的子类型
-    #[schema(example = Request)]
-    pub subtype: LogSubType,
     /// Log 的 Flow
     #[schema(example = Query)]
     pub flow: LogFlow,
     /// flag
     #[schema(example = "")]
     pub flag: String,
-}
-
-/// Log 的类型
-#[derive(ToSchema, Serialize, Deserialize)]
-pub enum LogType {
-    #[serde(rename = "FILE_TRANS")]
-    FileTrans,
-}
-
-/// Log 的子类型
-#[derive(ToSchema, Serialize, Deserialize)]
-pub enum LogSubType {
-    #[serde(rename = "REQUEST")]
-    Request,
-    #[serde(rename = "FILE_DATA")]
-    FileData,
-    #[serde(rename = "NOTICE")]
-    Notice,
 }
 
 /// Log 的 Flow

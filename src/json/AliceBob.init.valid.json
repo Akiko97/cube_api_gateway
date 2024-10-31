@@ -44,7 +44,16 @@
       "type": "INSTANCE",
       "desc": "",
       "modules": [
-      ]
+        {},
+        {
+          "full_name": "AliceBob.init.transfer.file_dealer",
+          "name": "file_dealer",
+          "name_cn": "文件分发模块",
+          "type": "MODULE",
+          "desc": ""
+        }
+      ],
+      "tangents": []
     },
     {
       "full_name": "AliceBob.init.receiver",
@@ -83,8 +92,7 @@
             "AliceBob.init.sender",
             "AliceBob.init.transfer"
           ],
-          "inRoute": [
-          ],
+          "inRoute": [],
           "route_ui_props": "AliceBob.init.sender$_$AliceBob.init.transfer"
         },
         {

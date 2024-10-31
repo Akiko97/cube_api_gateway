@@ -1,96 +1,79 @@
 {
   "log": [
     {
-      "log": [
+      "log":
+      [
         {
-          "route": "AliceBob.init.route<main>",
-          "instance": "sender",
-          "from": "",
-          "to": "request",
-          "type": "FILE_TRANS",
-          "subtype": "REQUEST",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.init.route<main>",
+          "instance":"sender",
+          "from":"",
+          "to":"request",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.init.route<main>",
-          "instance": "sender",
-          "from": "request",
-          "to": "file_dealer",
-          "type": "FILE_TRANS",
-          "subtype": "REQUEST",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.init.route<main>",
+          "instance":"sender",
+          "from":"request",
+          "to":"file_dealer",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.init.route<main>",
-          "instance": "sender",
-          "from": "file_dealer",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.init.route<main>",
+          "instance":"sender",
+          "from":"file_dealer",
+          "to":"",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.init.route<main>",
-          "instance": "transfer",
-          "from": "",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.init.route<main>",
+          "instance":"transfer",
+          "from":"",
+          "to":"",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.init.route<main>",
-          "instance": "receiver",
-          "from": "",
-          "to": "file_dealer",
-          "type": "FILE_TRANS",
-          "subtype": "FILE_DATA",
-          "flow": "QUERY",
-          "flag": ""
+          "route":"AliceBob.init.route<main>",
+          "instance":"receiver",
+          "from":"",
+          "to":"file_dealer",
+          "flow":"QUERY",
+          "flag":""
         },
         {
-          "route": "AliceBob.init.route<main>",
-          "instance": "receiver",
-          "from": "file_dealer",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "NOTICE",
-          "flow": "RESPONSE",
-          "flag": ""
+          "route":"AliceBob.init.route<main>",
+          "instance":"receiver",
+          "from":"file_dealer",
+          "to":"",
+          "flow":"RESPONSE",
+          "flag":""
         },
         {
-          "route": "AliceBob.init.route<main>",
-          "instance": "transfer",
-          "from": "",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "NOTICE",
-          "flow": "RESPONSE",
-          "flag": ""
+          "route":"AliceBob.init.route<main>",
+          "instance":"transfer",
+          "from":"",
+          "to":"",
+          "flow":"RESPONSE",
+          "flag":""
         },
         {
-          "route": "AliceBob.init.route<main>",
-          "instance": "sender",
-          "from": "",
-          "to": "msg_print",
-          "type": "FILE_TRANS",
-          "subtype": "NOTICE",
-          "flow": "RESPONSE",
-          "flag": ""
+          "route":"AliceBob.init.route<main>",
+          "instance":"sender",
+          "from":"",
+          "to":"msg_print",
+          "flow":"RESPONSE",
+          "flag":""
         },
         {
-          "route": "AliceBob.init.route<main>",
-          "instance": "transfer",
-          "from": "msg_print",
-          "to": "",
-          "type": "FILE_TRANS",
-          "subtype": "NOTICE",
-          "flow": "FINISH",
-          "flag": ""
+          "route":"AliceBob.init.route<main>",
+          "instance":"transfer",
+          "from":"msg_print",
+          "to":"",
+          "flow":"FINISH",
+          "flag":""
         }
       ]
     }

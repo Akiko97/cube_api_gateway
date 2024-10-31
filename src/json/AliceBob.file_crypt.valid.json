@@ -54,11 +54,7 @@
       "desc": "",
       "modules": [
         {
-          "full_name": "AliceBob.file_crypt.transfer.base64_crypt",
-          "name": "base64_crypt",
-          "name_cn": "Base64编码模块",
-          "type": "MODULE",
-          "desc": ""
+
         },
         {
           "full_name": "AliceBob.file_crypt.transfer.file_dealer",
@@ -111,8 +107,8 @@
       "desc": "",
       "modules": [
         {
-          "full_name": "AliceBob.file_crypt.Alice_crypthub.base64_crypt",
-          "name": "base64_crypt",
+          "full_name": "AliceBob.file_crypt.Alice_crypthub.sm4_crypt",
+          "name": "sm4_crypt",
           "name_cn": "",
           "type": "MODULE",
           "desc": ""
@@ -127,8 +123,8 @@
       "desc": "",
       "modules": [
         {
-          "full_name": "AliceBob.file_crypt.Bob_crypthub.base64_crypt",
-          "name": "base64_crypt",
+          "full_name": "AliceBob.file_crypt.Bob_crypthub.sm4_crypt",
+          "name": "sm4_crypt",
           "name_cn": "",
           "type": "MODULE",
           "desc": ""
@@ -150,7 +146,7 @@
             "AliceBob.file_crypt.sender.file_dealer",
             "AliceBob.file_crypt.sender.point_intercept"
           ],
-          "route_ui_props":"AliceBob.file_crypt.start$_$AliceBob.file_crypt.sender"
+          "route_ui_props": "AliceBob.file_crypt.start$_$AliceBob.file_crypt.sender"
         },
         {
           "outRoute": [
@@ -160,7 +156,7 @@
           "inRoute": [
             "AliceBob.file_crypt.transfer.point_copy"
           ],
-          "route_ui_props":"AliceBob.file_crypt.sender$_$AliceBob.file_crypt.transfer"
+          "route_ui_props": "AliceBob.file_crypt.sender$_$AliceBob.file_crypt.transfer"
         },
         {
           "outRoute": [
@@ -171,15 +167,18 @@
             "AliceBob.file_crypt.receiver.point_intercept",
             "AliceBob.file_crypt.receiver.file_dealer"
           ],
-          "route_ui_props":"AliceBob.file_crypt.transfer$_$AliceBob.file_crypt.receiver"
+          "route_ui_props": "AliceBob.file_crypt.transfer$_$AliceBob.file_crypt.receiver"
         },
         {
           "outRoute": [
             "AliceBob.file_crypt.receiver",
             "AliceBob.file_crypt.transfer"
           ],
-          "inRoute": [],
-          "route_ui_props":"AliceBob.file_crypt.receiver$_$AliceBob.file_crypt.transfer"
+          "props": {
+            "into": "rightTop_in",
+            "out": "leftTop_out"
+          },
+          "inRoute": []
         },
         {
           "outRoute": [
@@ -189,7 +188,7 @@
           "inRoute": [
             "AliceBob.file_crypt.sender.msg_print"
           ],
-          "route_ui_props":"AliceBob.file_crypt.transfer$_$AliceBob.file_crypt.sender"
+          "route_ui_props": "AliceBob.file_crypt.transfer$_$AliceBob.file_crypt.sender"
         }
       ]
     },
@@ -198,9 +197,8 @@
       "routes": [
         {
           "outRoute": [],
-          "inRoute":[
+          "inRoute": [
             "AliceBob.file_crypt.transfer.point_copy",
-            "AliceBob.file_crypt.transfer.base64_crypt",
             "AliceBob.file_crypt.transfer.file_dealer"
           ]
         }
@@ -214,30 +212,30 @@
             "",
             "AliceBob.file_crypt.sender"
           ],
-          "inRoute":[
+          "inRoute": [
             "AliceBob.file_crypt.sender.point_intercept"
           ],
-          "route_ui_props":"route<A>.sender$_$start$_$AliceBob.file_crypt.sender"
+          "route_ui_props": "route<A>.sender$_$AliceBob.file_crypt.sender$_$AliceBob.file_crypt.sender"
         },
         {
           "outRoute": [
             "AliceBob.file_crypt.sender",
             "AliceBob.file_crypt.Alice_crypthub"
           ],
-          "inRoute":[
-            "AliceBob.file_crypt.Alice_crypthub.base64_crypt"
+          "inRoute": [
+            "AliceBob.file_crypt.Alice_crypthub.sm4_crypt"
           ],
-          "route_ui_props":"route<A>.sender$_$AliceBob.file_crypt.sender$_$AliceBob.file_crypt.Alice_crypthub"
+          "route_ui_props": "route<A>.sender$_$AliceBob.file_crypt.sender$_$AliceBob.file_crypt.Alice_crypthub"
         },
         {
           "outRoute": [
             "AliceBob.file_crypt.Alice_crypthub",
             "AliceBob.file_crypt.sender"
           ],
-          "inRoute":[
+          "inRoute": [
             "AliceBob.file_crypt.sender.point_intercept"
           ],
-          "route_ui_props":"route<A>.sender$_$AliceBob.file_crypt.Alice_crypthub$_$AliceBob.file_crypt.sender"
+          "route_ui_props": "route<A>.sender$_$AliceBob.file_crypt.Alice_crypthub$_$AliceBob.file_crypt.sender"
         }
       ]
     },
@@ -249,30 +247,30 @@
             "",
             "AliceBob.file_crypt.receiver"
           ],
-          "inRoute":[
+          "inRoute": [
             "AliceBob.file_crypt.receiver.point_intercept"
           ],
-          "route_ui_props":"route<A>.receiver$_$start$_$AliceBob.file_crypt.receiver"
+          "route_ui_props": "route<A>.receiver$_$_$_$AliceBob.file_crypt.receiver"
         },
         {
           "outRoute": [
             "AliceBob.file_crypt.receiver",
             "AliceBob.file_crypt.Bob_crypthub"
           ],
-          "inRoute":[
-            "AliceBob.file_crypt.Bob_crypthub.base64_crypt"
+          "inRoute": [
+            "AliceBob.file_crypt.Bob_crypthub.sm4_crypt"
           ],
-          "route_ui_props":"route<A>.receiver$_$AliceBob.file_crypt.receiver$_$AliceBob.file_crypt.Bob_crypthub"
+          "route_ui_props": "route<A>.receiver$_$AliceBob.file_crypt.receiver$_$AliceBob.file_crypt.Bob_crypthub"
         },
         {
           "outRoute": [
             "AliceBob.file_crypt.Bob_crypthub",
             "AliceBob.file_crypt.receiver"
           ],
-          "inRoute":[
+          "inRoute": [
             "AliceBob.file_crypt.receiver.point_intercept"
           ],
-          "route_ui_props":"route<A>.receiver$_$AliceBob.file_crypt.Bob_crypthub$_$AliceBob.file_crypt.receiver"
+          "route_ui_props": "route<A>.receiver$_$AliceBob.file_crypt.Bob_crypthub$_$AliceBob.file_crypt.receiver"
         }
       ]
     }
