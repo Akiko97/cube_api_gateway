@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 use utoipa::ToSchema;
 
 /// 场景数据：包括节点数据和边数据
@@ -43,6 +43,18 @@ pub struct Route {
     #[schema(example = "AliceBob.force_attack.start$_$AliceBob.force_attack.sender")]
     #[serde(rename = "route_ui_props")]
     pub route_ui_props: Option<String>,
+    /// 属性
+    pub props: Option<RouteProps>,
+}
+
+#[derive(Serialize, Deserialize, ToSchema)]
+pub struct RouteProps {
+    /// 入口？
+    #[schema(example = "rightTop_in")]
+    pub into: Option<String>,
+    /// 出口？
+    #[schema(example = "leftTop_out")]
+    pub out: Option<String>,
 }
 
 /// 节点结构

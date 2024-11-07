@@ -1,8 +1,8 @@
-use std::sync::Arc;
+use crate::ServerContext;
 use axum::Router;
+use std::sync::Arc;
 use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;
-use crate::ServerContext;
 
 #[derive(OpenApi)]
 #[openapi(
@@ -16,6 +16,7 @@ use crate::ServerContext;
         schemas(crate::message::scene::Scene),
         schemas(crate::message::scene::Edge),
         schemas(crate::message::scene::Route),
+        schemas(crate::message::scene::RouteProps),
         schemas(crate::message::scene::Node),
         schemas(crate::message::scene::Module),
         schemas(crate::message::scene::Type),
