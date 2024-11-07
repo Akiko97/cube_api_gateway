@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 use utoipa::ToSchema;
 
 /// 模块状态数据：模块的设定，包括文件内容、设置密钥、攻击信息
@@ -9,10 +9,13 @@ pub struct ModuleStatus {
     pub full_name: String,
     /// 加密密钥
     #[schema(example = "0123456789abcdef0123456789abcdef")]
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub crypt_key: Option<String>,
     /// 文件内容
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub file: Option<File>,
     /// 攻击信息
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub attack_info: Option<AttackInfo>,
 }
 

@@ -10,6 +10,7 @@ pub struct Scene {
     pub edges: Vec<Edge>,
     /// 提示
     #[schema(example = "")]
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub tips: Option<String>,
 }
 
@@ -42,8 +43,10 @@ pub struct Route {
     /// 该组路由的唯一标识，用于映射 UI 里的样式配置文件
     #[schema(example = "AliceBob.force_attack.start$_$AliceBob.force_attack.sender")]
     #[serde(rename = "route_ui_props")]
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub route_ui_props: Option<String>,
     /// 属性
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub props: Option<RouteProps>,
 }
 
@@ -51,10 +54,10 @@ pub struct Route {
 pub struct RouteProps {
     /// 入口？
     #[schema(example = "rightTop_in")]
-    pub into: Option<String>,
+    pub into: String,
     /// 出口？
     #[schema(example = "leftTop_out")]
-    pub out: Option<String>,
+    pub out: String,
 }
 
 /// 节点结构
@@ -77,8 +80,10 @@ pub struct Node {
     #[schema(example = "")]
     pub desc: String,
     /// 内部的模块
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub modules: Option<Vec<Module>>,
     /// 切面点信息，用于链接分支路由
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub tangents: Option<Vec<Module>>,
 }
 
@@ -88,19 +93,24 @@ pub struct Node {
 pub struct Module {
     /// 全名（全局唯一）
     #[schema(example = "AliceBob.force_attack.transfer.file_dealer")]
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub full_name: Option<String>,
     /// 名称
     #[schema(example = "file_dealer")]
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     /// 中文名称
     #[schema(example = "文件分发模块")]
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub name_cn: Option<String>,
     /// 类型
     #[schema(example = Module)]
     #[serde(rename = "type")]
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub module_type: Option<Type>,
     /// 描述
     #[schema(example = "")]
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub desc: Option<String>,
 }
 
