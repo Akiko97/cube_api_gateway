@@ -227,21 +227,24 @@
       "file": {
         "name": "5rWL6K+V5paH5Lu2",
         "text": "5Z+65pys5a+G56CB5a2m5Y6f55CG5a6e6K6t77yM5a6e6K6t5YaF5a655YyF5ous5Z+65pys5bqU55So6IOM5pmv77yM56qD5ZCs5pS75Ye744CB57yW56CB5LiN5piv5a+G56CB77yM5Z+65pysU0005Yqg5a+G5py65Yi277yM56m35Li+5pS75Ye75Y6f55CG5ryU56S65LqU6YOo5YiG"
-      }
+      },
+      "need_to_view": true
     },
     {
       "full_name": "AliceBob.base64.sender.file_dealer",
       "file": {
         "name": "测试文件",
         "text": "基本密码学原理实训，实训内容包括基本应用背景，窃听攻击、编码不是密码，基本SM4加密机制，穷举攻击原理演示五部分"
-      }
+      },
+      "need_to_view": true
     },
     {
       "full_name": "AliceBob.base64.receiver.file_dealer",
       "file": {
         "name": "测试文件",
         "text": "基本密码学原理实训，实训内容包括基本应用背景，窃听攻击、编码不是密码，基本SM4加密机制，穷举攻击原理演示五部分"
-      }
+      },
+      "need_to_view": true
     }
   ]
 }

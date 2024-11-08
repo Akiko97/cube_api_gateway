@@ -237,28 +237,32 @@
       "file": {
         "name": "测试文件",
         "text": "基本密码学原理实训，实训内容包括基本应用背景，窃听攻击、编码不是密码，基本SM4加密机制，穷举攻击原理演示五部分"
-      }
+      },
+      "need_to_view": true
     },
     {
       "full_name": "AliceBob.force_attack.sender.file_dealer",
       "file": {
         "name": "测试文件",
         "text": "基本密码学原理实训，实训内容包括基本应用背景，窃听攻击、编码不是密码，基本SM4加密机制，穷举攻击原理演示五部分"
-      }
+      },
+      "need_to_view": true
     },
     {
       "full_name": "AliceBob.force_attack.receiver.file_dealer",
       "file": {
         "name": "测试文件",
         "text": "基本密码学原理实训，实训内容包括基本应用背景，窃听攻击、编码不是密码，基本SM4加密机制，穷举攻击原理演示五部分"
-      }
+      },
+      "need_to_view": true
     },
     {
       "full_name": "AliceBob.force_attack.transfer.sm4_attack",
       "attack_info": {
         "result": "success",
         "time": 66.66
-      }
+      },
+      "need_to_view": true
     }
   ]
 }
